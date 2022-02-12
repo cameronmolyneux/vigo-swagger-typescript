@@ -1,8 +1,3 @@
-[![NPM](https://nodei.co/npm/swagger-typescript.png)](https://nodei.co/npm/swagger-typescript/)
-
-[![install size](https://packagephobia.now.sh/badge?p=swagger-typescript)](https://packagephobia.now.sh/result?p=swagger-typescript) [![dependencies](https://david-dm.org/hosseinmd/swagger-typescript.svg)](https://david-dm.org/hosseinmd/swagger-typescript.svg)
-
-:star::star::star: If you would like to contribute, please refer to [To do list](https://github.com/hosseinmd/swagger-typescript/projects/1) and a list of [open tasks](https://github.com/hosseinmd/swagger-typescript/issues?q=is%3Aopen).:star::star::star:
 
 # Swagger-Typescript: Generate ts/js code from swagger/openApi JSON
 
@@ -17,15 +12,6 @@ Supported
 - React hooks.
 - SignalR hub.
 - Generating mock data.
-
-For Example:
-Get method of '/Account' path will be this code in services.ts
-
-```js
-import { getAccount } from "./services";
-
-const response = await getAccount({ id: 1234 });
-```
 
 ## install
 
@@ -79,10 +65,15 @@ For Example:
 }
 ```
 
+    modelsFolder,
+    modelsFileName,
+
 | [`Key`]              | [`default`]      | Comment                                                                                                                                                                                                                                        |
 | -------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `url`                | Required         | Address of swagger.json                                                                                                                                                                                                                        |
-| `dir`                | Required         | Address of output                                                                                                                                                                                                                              |
+| `dir`                | Required         | Address of services output                                                                                                                                                                                                                     |
+| `modelsFolder`       | Optional         | Address of models output                                                                                                                                                                                                                       |
+| `modelsFileName`     | Optional         | Filename of the models file                                                                                                                                                                                                                    |
 | `language`           | `typescript`     | export to "javascript" or "typescript"                                                                                                                                                                                                         |
 | `methodName`         | `{method}{path}` | Supported mixed of "{method}{path}{operationId}". for Example: 'service{method}{path}'                                                                                                                                                         |
 | `prefix`             | Optional         | prefix value will be removed from method name For example your endpoints is like "/api/v2/users", If you don't want add "/api/v2" to method name, add it to prefix                                                                             |
@@ -116,7 +107,7 @@ The config.ts file automatically will be created after first run. You could chan
 ## run by node
 
 ```js
-const { generate } = require("swagger-typescript");
+const { generate } = require("vigo-swagger-typescript");
 
 generate(config);
 // or
@@ -163,7 +154,3 @@ swagger.config.json
   }
 ]
 ```
-
-## Stories
-
-[why-you-should-use-swagger-typescript-for-generate-apis-code](https://medium.com/@hosseinm.developer/why-you-should-use-swagger-typescript-for-generate-apis-code-63eb8623fef8?source=friends_link&sk=2aa0e2d30b3be158d18c1feb4e12d4a6)
