@@ -34,7 +34,7 @@ Before running, add your config to swagger.config.json
 #### run
 
 ```
-yarn swag-ts
+yarn vigo-swag-ts
 ```
 
 #### config.ts
@@ -80,11 +80,11 @@ For Example:
 | `ignore`             | Optional         | Ignore headers from type for Example: `"ignore": { "headerParams": ["terminalId"]}`                                                                                                                                                            |
 | `methodParamsByTag`  | false            | add add a tag insteadOf params name to generated method name (example: getUserP1P2 insteadOf getUserConnectionIdAccountId)                                                                                                                     |
 | `mock`               | false            | For generate response mocks                                                                                                                                                                                                                    |
-| `keepJson`           | false            | This code will keep previous JSON for updating partially. change it to true then generate service for creating your first json file then you can update a tag for example `$ yarn swag-ts User` will update your user APIs which have User tag |
+| `keepJson`           | false            | This code will keep previous JSON for updating partially. change it to true then generate service for creating your first json file then you can update a tag for example `$ yarn vigo-swag-ts User` will update your user APIs which have User tag |
 | `reactHooks`         | false            | For generate react hooks of all APIs (using react-query under the hood)                                                                                                                                                                        |
 | `useQuery`           | []               | List of apis which is get but developed with post methods (Is useful for rest apis) for Example: ["postTicketsGetall"] (Needed to enable `reactHooks`)                                                                                         |
 | `useInfiniteQuery`   | []               | List of apis which is get and could be handle infinity (Needed to enable `reactHooks`) parameter should be one of `page`, `pageNo` or `pageNumber`                                                                                             |
-| `local`              | false            | update swagger with local swagger.json located in your dir folder. add it to your config file or run it with cli `$ yarn swag-ts --local`                                                                                                      |
+| `local`              | false            | update swagger with local swagger.json located in your dir folder. add it to your config file or run it with cli `$ yarn vigo-swag-ts --local`                                                                                                      |
 | `generateEnumAsType` | false            |
 
 - `enum ReferralStatus {Successed="Successed","Error"="Error"} `
@@ -126,11 +126,11 @@ For Doing this you need to add this to your swagger.config.json
 
 This code will keep previous JSON for updating partially.
 
-Run `$ yarn swag-ts` with your base backend, for example develop branch
+Run `$ yarn vigo-swag-ts` with your base backend, for example develop branch
 
 Others need to pull this changes
 
-Now you can update Tag1 and Tag2 `$ yarn swag-ts Tag1 Tag2`.
+Now you can update Tag1 and Tag2 `$ yarn vigo-swag-ts Tag1 Tag2`.
 
 ## Multiple-Gateway
 

@@ -260,7 +260,7 @@ function getLocalJson(dir: string) {
     return JSON.parse(old);
   } catch (error) {
     chalk.red(
-      "swagger.json file not found. You should set keepJson true to save json then run swag-ts without tag to save that",
+      "swagger.json file not found. You should set keepJson true to save json then run vigo-swag-ts without tag to save that",
     );
     throw error;
   }
