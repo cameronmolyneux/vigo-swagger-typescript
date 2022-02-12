@@ -1,0 +1,7 @@
+{
+  "url": "https://dev.api2.vigocloud.com/masterdata/swagger/v1/swagger.json",
+  "dir": "test/swagger2",
+  "modelsFolder": "test/models",
+  "modelsFileName": "masterdata",
+  "typesOnly": true
+}
