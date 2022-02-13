@@ -1,7 +1,7 @@
 {
   "name": "vigo-swagger-typescript",
-  "version": "1.0.1",
-  "description": "An auto ts/js code generate from swagger/openApi",
+  "version": "1.0.2",
+  "description": "An auto ts code generate from swagger/openApi",
   "main": "lib/index.js",
   "bin": {
     "vigo-swag-ts": "./bin/index.js"
