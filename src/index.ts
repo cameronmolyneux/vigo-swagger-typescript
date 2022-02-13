@@ -1,24 +1,15 @@
-import {
-  writeFileSync,
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  rmdirSync,
-} from "fs";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { writeFileSync, existsSync, mkdirSync, readFileSync } from "fs";
 import { format } from "prettier";
 import { SwaggerJson, SwaggerConfig, Config } from "./types";
-import { HTTP_REQUEST, CONFIG, FILE_HOOKS_CONFIG } from "./strings";
+import { FILE_HOOKS_CONFIG } from "./strings";
 import { getJson } from "./getJson";
 import { generator } from "./generator";
-import { build } from "tsc-prog";
 import { majorVersionsCheck } from "./utils";
-import { HubJson, signalRGenerator } from "./signalR/generator";
 import { swaggerToOpenApi } from "./utilities/swaggerToOpenApi";
 import { generateMock } from "./mock";
 import chalk from "chalk";
-import { partialUpdateJson } from "./updateJson";
-//@ts-ignore
-import recursive from "recursive-readdir";
 
 /** @param config If isn't defined will be use swagger.config.json instead */
 async function generate(config?: SwaggerConfig, cli?: Partial<Config>) {
@@ -37,48 +28,50 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
   };
 
   const {
-    url,
-    hub,
-    dir,
-    prettierPath,
-    language,
-    mock,
-    tag,
-    keepJson,
-    reactHooks,
-    local,
-    typesOnly,
+    swaggerUrl,
     modelsFolder,
-    modelsFileName,
+    serviceFolder,
+    storeFolder,
+    prettierPath,
+    mock,
+    local,
+    serviceName,
   } = config;
 
-  const folderForModels = modelsFolder === undefined ? dir : modelsFolder;
+  const folderForModels =
+    modelsFolder === undefined ? serviceFolder : modelsFolder;
 
-  const isToJs = language === "javascript";
-
-  if (!existsSync(folderForModels)) {
+  // if we are building models, create folder
+  if (modelsFolder !== undefined && !existsSync(folderForModels)) {
     mkdirSync(folderForModels);
   }
 
-  if (!existsSync(dir)) {
-    mkdirSync(dir);
+  // of we are building services, create folder
+  if (serviceFolder !== undefined && !existsSync(serviceFolder)) {
+    mkdirSync(serviceFolder);
   }
+
+  // of we are building store, create folder
+  if (storeFolder !== undefined && !existsSync(storeFolder)) {
+    mkdirSync(storeFolder);
+  }
+
+  // eslint-disable-next-line no-debugger
+  debugger;
 
   const prettierOptions = getPrettierOptions(prettierPath);
 
   try {
-    const swaggerJsonPath = `${dir}/swagger.json`;
-
     let input: SwaggerJson;
 
     if (local) {
-      input = getLocalJson(dir);
+      input = getLocalJson(serviceFolder);
     } else {
-      if (!url) {
+      if (!swaggerUrl) {
         throw new Error("Add url in swagger.config.json ");
       }
 
-      input = await getJson(url);
+      input = await getJson(swaggerUrl);
 
       if (input.swagger) {
         majorVersionsCheck("2.0.0", input.swagger);
@@ -89,98 +82,34 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
       }
     }
 
-    if (keepJson) {
-      try {
-        if (!tag?.length) {
-          writeFileSync(swaggerJsonPath, JSON.stringify(input));
-        } else {
-          const oldJson = getLocalJson(dir);
-
-          input = partialUpdateJson(oldJson, input, tag);
-          writeFileSync(swaggerJsonPath, JSON.stringify(input));
-        }
-      } catch (error) {
-        chalk.red(error);
-        chalk.red("keepJson failed");
-      }
-    }
-
     const { code, hooks, type } = generator(input, config);
-
-    let hubCode = null;
 
     if (mock) {
       generateMock(input, config);
     }
 
-    if (!typesOnly) {
-      writeFileSync(`${dir}/services.ts`, code);
-      console.log(chalk.yellowBright("services Completed"));
-      if (reactHooks && hooks) {
-        writeFileSync(`${dir}/hooks.ts`, hooks);
-        if (!existsSync(`${dir}/hooksConfig.${isToJs ? "js" : "ts"}`)) {
-          writeFileSync(`${dir}/hooksConfig.ts`, FILE_HOOKS_CONFIG);
-        }
-        console.log(chalk.yellowBright("hooks Completed"));
-      }
-      writeFileSync(`${dir}/httpRequest.ts`, HTTP_REQUEST);
-      console.log(chalk.yellowBright("httpRequest Completed"));
-
-      if (!existsSync(`${dir}/config.${isToJs ? "js" : "ts"}`)) {
-        writeFileSync(
-          `${dir}/config.ts`,
-          CONFIG.replace(
-            "${AUTO_REPLACE_BASE_URL}",
-            input.servers?.[0]?.url || "",
-          ),
-        );
-        console.log(chalk.yellowBright("config Completed"));
-      }
-      // signalR hub definition
-
-      if (hub) {
-        const hubJson: HubJson = hub ? await getJson(hub) : null;
-
-        hubCode = signalRGenerator(hubJson);
-        hubCode && writeFileSync(`${dir}/hub.ts`, hubCode);
-
-        console.log(chalk.yellowBright("hub Completed"));
-      }
-    }
-    // write out the types
-    writeFileSync(`${folderForModels}/${modelsFileName}.ts`, type);
-    console.log(chalk.yellowBright("types Completed"));
-
-    if (isToJs) {
-      const files = [
-        hubCode && "hub",
-        ...(url || local
-          ? [
-              ...(reactHooks ? ["hooks", "hooksConfig"] : []),
-              "config",
-              "httpRequest",
-              "services",
-              "types",
-            ]
-          : []),
-      ].filter(Boolean) as string[];
-      convertTsToJs(dir, files);
+    // write out the models
+    if (modelsFolder !== undefined) {
+      writeFileSync(`${folderForModels}/${serviceName}.ts`, type);
+      formatFile(`${folderForModels}/${serviceName}.ts`, prettierOptions);
+      console.log(chalk.yellowBright("Models Completed"));
     }
 
-    recursive(dir, function (err: Error | null, files: any[]) {
-      if (err) {
-        console.log(chalk.redBright(Error));
-        return;
+    // write out the services
+    if (serviceFolder !== undefined) {
+      writeFileSync(`${serviceFolder}/${serviceName}Services.ts`, code);
+      formatFile(`${serviceFolder}/${serviceName}Services.ts`, prettierOptions);
+      console.log(chalk.yellowBright("Services Completed"));
+    }
+
+    // write out the store
+    if (storeFolder !== undefined) {
+      writeFileSync(`${storeFolder}/hooks.ts`, hooks);
+      if (!existsSync(`${storeFolder}/hooksConfig.ts"`)) {
+        writeFileSync(`${storeFolder}/hooksConfig.ts`, FILE_HOOKS_CONFIG);
       }
-      files.forEach((file) => {
-        if (file.endsWith(".ts") || file.endsWith(".js")) {
-          formatFile(file, prettierOptions);
-        }
-        if (file.endsWith(".json")) {
-          formatFile(file, { ...prettierOptions, parser: "json" });
-        }
-      });
-    });
+      console.log(chalk.yellowBright("Redux stores Completed"));
+    }
     console.log(chalk.greenBright("All Completed"));
   } catch (error) {
     console.log(chalk.redBright(error));
@@ -191,28 +120,6 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
 function formatFile(filePath: string, prettierOptions: any) {
   const code = readFileSync(filePath).toString();
   writeFileSync(filePath, format(code, prettierOptions));
-}
-
-function convertTsToJs(dir: string, files: string[]) {
-  build({
-    basePath: ".", // always required, used for relative paths
-    compilerOptions: {
-      listFiles: true,
-      outDir: dir,
-      declaration: true,
-      skipLibCheck: true,
-      module: "esnext",
-      target: "esnext",
-      lib: ["esnext"],
-    },
-    files: files.map((file) => `${dir}/${file}.ts`),
-  });
-
-  files.forEach((file) => {
-    if (existsSync(`${dir}/${file}.ts`)) {
-      rmdirSync(`${dir}/${file}.ts`, { recursive: true });
-    }
-  });
 }
 
 function getSwaggerConfig(): SwaggerConfig {

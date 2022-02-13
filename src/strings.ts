@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { readFileSync } from "fs";
 import path from "path";
 

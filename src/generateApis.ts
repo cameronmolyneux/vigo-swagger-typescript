@@ -1,26 +1,13 @@
-import {
-  getTsType,
-  isAscending,
-  getDefineParam,
-  getParamString,
-  getSchemaName,
-  isMatchWholeWord,
-} from "./utils";
-import { ApiAST, TypeAST } from "./types";
-import {
-  SERVICE_BEGINNING,
-  SERVICE_NEEDED_FUNCTIONS,
-  DEPRECATED_WARM_MESSAGE,
-} from "./strings";
-import { getJsdoc } from "./utilities/jsdoc";
+import { getTsType, isAscending, getDefineParam, getParamString, getSchemaName, isMatchWholeWord } from './utils';
+import { ApiAST, TypeAST } from './types';
+import { SERVICE_BEGINNING, SERVICE_NEEDED_FUNCTIONS, DEPRECATED_WARM_MESSAGE } from './strings';
+import { getJsdoc } from './utilities/jsdoc';
 
 function generateApis(apis: ApiAST[], types: TypeAST[]): string {
   let code = SERVICE_BEGINNING;
   try {
     const apisCode = apis
-      .sort(({ serviceName }, { serviceName: _serviceName }) =>
-        isAscending(serviceName, _serviceName),
-      )
+      .sort(({ serviceName }, { serviceName: _serviceName }) => isAscending(serviceName, _serviceName))
       .reduce(
         (
           prev,
@@ -40,48 +27,34 @@ function generateApis(apis: ApiAST[], types: TypeAST[]): string {
             endPoint,
             pathParamsRefString,
             additionalAxiosConfig,
-            security,
-          },
+            security
+          }
         ) => {
           return (
             prev +
             `
 ${getJsdoc({
   description: summary,
-  deprecated: deprecated ? DEPRECATED_WARM_MESSAGE : undefined,
+  deprecated: deprecated ? DEPRECATED_WARM_MESSAGE : undefined
 })}export const ${serviceName} = (
     ${
       /** Path parameters */
       pathParams
-        .map(({ name, required, schema, description }) =>
-          getDefineParam(name, required, schema, description),
-        )
-        .join(",")
-    }${pathParams.length > 0 ? "," : ""}${
+        .map(({ name, required, schema, description }) => getDefineParam(name, required, schema, description))
+        .join(',')
+    }${pathParams.length > 0 ? ',' : ''}${
               /** Request Body */
-              requestBody
-                ? `${getDefineParam("requestBody", true, requestBody)},`
-                : ""
+              requestBody ? `${getDefineParam('requestBody', true, requestBody)},` : ''
             }${
               /** Query parameters */
               queryParamsTypeName
-                ? `${getParamString(
-                    "queryParams",
-                    !isQueryParamsNullable,
-                    queryParamsTypeName,
-                  )},`
-                : ""
+                ? `${getParamString('queryParams', !isQueryParamsNullable, queryParamsTypeName)},`
+                : ''
             }${
               /** Header parameters */
-              headerParams
-                ? `${getParamString(
-                    "headerParams",
-                    !isHeaderParamsNullable,
-                    headerParams,
-                  )},`
-                : ""
+              headerParams ? `${getParamString('headerParams', !isHeaderParamsNullable, headerParams)},` : ''
             }configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<${responses ? getTsType(responses) : "any"}>> => {
+): Promise<SwaggerResponse<${responses ? getTsType(responses) : 'any'}>> => {
   ${
     deprecated
       ? `
@@ -91,22 +64,17 @@ ${getJsdoc({
       "${DEPRECATED_WARM_MESSAGE}",
     );
   }`
-      : ""
+      : ''
   }
   return Http.${method}Request(
-    ${
-      pathParamsRefString
-        ? `template(${serviceName}.key,${pathParamsRefString})`
-        : `${serviceName}.key`
-    },
-    ${queryParamsTypeName ? "queryParams" : "undefined"},
+    ${pathParamsRefString ? `template(${serviceName}.key,${pathParamsRefString})` : `${serviceName}.key`},
+    ${queryParamsTypeName ? 'queryParams' : 'undefined'},
     ${
       requestBody
-        ? contentType === "multipart/form-data" ||
-          contentType === "application/x-www-form-urlencoded"
-          ? "objToForm(requestBody)"
-          : "requestBody"
-        : "undefined"
+        ? contentType === 'multipart/form-data' || contentType === 'application/x-www-form-urlencoded'
+          ? 'objToForm(requestBody)'
+          : 'requestBody'
+        : 'undefined'
     },
     ${security},
     overrideConfig(${additionalAxiosConfig},
@@ -120,7 +88,7 @@ ${serviceName}.key = "${endPoint}";
 `
           );
         },
-        "",
+        ''
       );
 
     code +=
@@ -132,14 +100,14 @@ ${serviceName}.key = "${endPoint}";
         }
 
         return prev + ` ${name},`;
-      }, "import {") + '}  from "./types"\n';
+      }, 'import {') + '}  from "./types"\n';
 
     code += SERVICE_NEEDED_FUNCTIONS;
     code += apisCode;
     return code;
   } catch (error) {
     console.error(error);
-    return "";
+    return '';
   }
 }
 

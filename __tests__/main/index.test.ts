@@ -1,9 +1,13 @@
+/* eslint-disable prettier/prettier */
 import { generator } from "../../src/generator";
 import swaggerJson from "./swagger.json";
 
 describe("generate", () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { code, hooks, type } = generator(swaggerJson as any, {
-    dir: "",
+    serviceFolder: "",
+    serviceName: "",
+    methodName: "",
     reactHooks: true,
   });
 

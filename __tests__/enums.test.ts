@@ -1,19 +1,19 @@
-import { generator } from "../src/generator";
-import swaggerJson from "./swagger.json";
+import { generator } from '../src/generator';
+import swaggerJson from './swagger.json';
 
-describe("generate", () => {
+describe('generate', () => {
   //@ts-ignore
   const { code, hooks, type } = generator(swaggerJson, {
-    generateEnumAsType: true,
+    generateEnumAsType: true
   });
 
-  it("generate Code", () => {
+  it('generate Code', () => {
     expect(code).toMatchSnapshot();
   });
-  it("generate hooks", () => {
+  it('generate hooks', () => {
     expect(hooks).toMatchSnapshot();
   });
-  it("generate type", () => {
+  it('generate type', () => {
     expect(type).toMatchSnapshot();
   });
 });

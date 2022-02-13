@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /** Is A fork from https://github.com/yayoc/swagger-to-mock */
 
 import chalk from "chalk";
@@ -9,9 +11,9 @@ import { existsSync, mkdirSync } from "fs";
 import { Config } from "../types";
 
 function generateMock(content: any, config: Config) {
-  const { dir } = config;
+  const { serviceFolder } = config;
   try {
-    const output = `${dir}/mocks`;
+    const output = `${serviceFolder}/mocks`;
     const responses = extractResponses(content, config);
     const schemas = extractSchemas(content);
     const composed = composeMockData(responses, schemas);

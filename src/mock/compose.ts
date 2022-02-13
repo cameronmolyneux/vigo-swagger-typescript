@@ -1,33 +1,28 @@
-import { ResponsesType } from "./response";
-import { Schemas } from "./schema";
-import { normalizePath } from "./util";
-import { REF, parseObject, parseArray } from "./parse";
-import { isObject, isArray, DataType } from "./dataType";
-import { getRefName } from "../utils";
+import { ResponsesType } from './response';
+import { Schemas } from './schema';
+import { normalizePath } from './util';
+import { REF, parseObject, parseArray } from './parse';
+import { isObject, isArray, DataType } from './dataType';
+import { getRefName } from '../utils';
 
 type MockData = {
   [path: string]: any;
 };
 
 // Compose mock data
-export const composeMockData = (
-  responses: ResponsesType,
-  schemas: Schemas,
-): MockData => {
+export const composeMockData = (responses: ResponsesType, schemas: Schemas): MockData => {
   const ret: any = {};
-  Object.keys(responses).forEach((path) => {
+  Object.keys(responses).forEach(path => {
     const res = responses[path];
     const pathKey = normalizePath(path);
-    let response: any = "";
+    let response: any = '';
     if (!res) {
       return;
     }
 
     Object.entries(res.response).forEach(([status, content]) => {
       const val =
-        content?.["application/json"] ||
-        content?.["application/octet-stream"] ||
-        content?.["multipart/form-data"];
+        content?.['application/json'] || content?.['application/octet-stream'] || content?.['multipart/form-data'];
 
       if (!val) {
         return;
@@ -45,7 +40,7 @@ export const composeMockData = (
           //   response = example["value"];
           // }
         }
-      } else if ("schema" in val) {
+      } else if ('schema' in val) {
         const { schema } = val;
         const ref = schema[REF];
         if (ref) {
@@ -69,7 +64,7 @@ export const composeMockData = (
       ret[pathKey] = {
         method: res.method,
         path: res.path,
-        response: { [status]: response },
+        response: { [status]: response }
       };
     });
   });

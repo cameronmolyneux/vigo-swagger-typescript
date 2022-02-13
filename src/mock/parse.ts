@@ -1,23 +1,16 @@
-import { Schema } from "../types";
-import { getRefName } from "../utils";
-import {
-  DataType,
-  isObject,
-  isArray,
-  isAllOf,
-  isOneOf,
-  isAnyOf,
-  isReferenceObject,
-} from "./dataType";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Schema } from '../types';
+import { getRefName } from '../utils';
+import { DataType, isObject, isArray, isAllOf, isOneOf, isAnyOf, isReferenceObject } from './dataType';
 
-export const REF = "$ref";
+export const REF = '$ref';
 type Schemas = {
   [schema: string]: Schema;
 };
 
 export const mergeAllOf = (properties: Schema[], schemas: Schemas): any => {
   let ret: any = {};
-  properties.forEach((property) => {
+  properties.forEach(property => {
     if (isReferenceObject(property)) {
       const schemaName = getRefName(property[REF]);
       if (schemaName) {
@@ -46,6 +39,7 @@ export const pickOneOf = (properties: Schema[], schemas: Schemas): any => {
 };
 
 // Retrieve mock data of schema.
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const getSchemaData = (schemas: Schemas, name: string): Object => {
   const schema = schemas[name];
 
@@ -73,6 +67,7 @@ export const parseObject = (obj: Schema, schemas: Schemas): any => {
     return {};
   }
   return Object.keys(obj.properties).reduce((acc: any, key: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const property = obj.properties![key];
     if (isReferenceObject(property)) {
       const schemaName = getRefName(property[REF]);
@@ -99,10 +94,7 @@ export const parseObject = (obj: Schema, schemas: Schemas): any => {
   }, {});
 };
 
-export const parseArray = (
-  arr: Schema & { items: Schema },
-  schemas: Schemas,
-): any => {
+export const parseArray = (arr: Schema & { items: Schema }, schemas: Schemas): any => {
   if (isReferenceObject(arr.items)) {
     const schemaName = getRefName(arr.items[REF]);
     if (schemaName) {

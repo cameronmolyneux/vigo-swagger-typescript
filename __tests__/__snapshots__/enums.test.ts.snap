@@ -3,10 +3,7 @@
 exports[`generate generate Code 1`] = `
 "
 /**
-* AUTO_GENERATED Do not change this file directly, use config.ts file instead
-*
-* @version 5
-*/
+* AUTO_GENERATED Do not change this file directly, rerun the yarn vigo-swag-ts command*/
 
 import { AxiosRequestConfig } from \\"axios\\";
 import { SwaggerResponse } from \\"./config\\";
@@ -82,10 +79,7 @@ exports[`generate generate hooks 1`] = `""`;
 exports[`generate generate type 1`] = `
 "
 /**
-* AUTO_GENERATED Do not change this file directly, use config.ts file instead
-*
-* @version 5
-*/
+* AUTO_GENERATED Do not change this file directly, rerun the yarn vigo-swag-ts command*/
 
         
         export interface GetSettlementV1PrivateSettlementGetQueryParams {\\"EndDate\\"?: string;\\"IsAuto\\"?: boolean;

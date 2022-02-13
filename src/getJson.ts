@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Axios from "axios";
 import yaml from "js-yaml";
 

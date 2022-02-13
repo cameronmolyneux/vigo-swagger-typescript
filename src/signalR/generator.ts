@@ -1,6 +1,6 @@
-import type { TypeAST, Schema, Parameter } from "../types";
-import { generateTypes } from "../generateTypes";
-import { getDefineParam } from "../utils";
+import type { TypeAST, Schema, Parameter } from '../types';
+import { generateTypes } from '../generateTypes';
+import { getDefineParam } from '../utils';
 
 export interface HubJson {
   SignalrType: string;
@@ -40,7 +40,7 @@ function signalRGenerator(json: HubJson): string {
   }[] = [];
 
   try {
-    Object.values(json.hubs).map((hub) => {
+    Object.values(json.hubs).map(hub => {
       const operations: ParsedOperation[] = [];
       const callbacks: ParsedOperation[] = [];
       Object.entries(hub.operations).map(
@@ -49,9 +49,9 @@ function signalRGenerator(json: HubJson): string {
           operations.push({
             name: _name,
             parameters: operation.parameters as any,
-            description: operation.description,
+            description: operation.description
           });
-        },
+        }
       );
 
       Object.entries(hub.callbacks).map(
@@ -60,36 +60,34 @@ function signalRGenerator(json: HubJson): string {
           callbacks.push({
             name: _name,
             parameters: operation.parameters as any,
-            description: operation.description,
+            description: operation.description
           });
-        },
+        }
       );
 
       hubs.push({
         name: hub.name,
         operations,
-        callbacks,
+        callbacks
       });
     });
 
     if (json.definitions) {
       types.push(
-        ...Object.entries(json.definitions as { [x: string]: Schema }).map(
-          ([name, schema]) => {
-            return {
-              name,
-              schema,
-            };
-          },
-        ),
+        ...Object.entries(json.definitions as { [x: string]: Schema }).map(([name, schema]) => {
+          return {
+            name,
+            schema
+          };
+        })
       );
     }
-    let code = "";
+    let code = '';
     hubs.map(({ name: hubsName, operations, callbacks }) => {
       const operationEnumsName = `${hubsName}OperationsNames`;
       const operationEnums = operations
         .map(({ name: operationKey }) => `${operationKey} = "${operationKey}"`)
-        .join(",\n");
+        .join(',\n');
 
       if (operationEnums) {
         code += `
@@ -102,25 +100,16 @@ function signalRGenerator(json: HubJson): string {
             ${operations
               .map(
                 ({ name, parameters }) =>
-                  `[${operationEnumsName}.${name}]: (${Object.entries(
-                    parameters,
-                  ).map(([_name, schema]) =>
-                    getDefineParam(
-                      _name,
-                      schema.required,
-                      (schema as unknown) as Schema,
-                      schema.description,
-                    ),
-                  )}) => Promise<void>`,
+                  `[${operationEnumsName}.${name}]: (${Object.entries(parameters).map(([_name, schema]) =>
+                    getDefineParam(_name, schema.required, (schema as unknown) as Schema, schema.description)
+                  )}) => Promise<void>`
               )
-              .join(";\n")}
+              .join(';\n')}
             };\n`;
       }
 
       const callbackEnumsName = `${hubsName}CallbacksNames`;
-      const callbackEnums = callbacks
-        .map(({ name: callbackKey }) => `${callbackKey} = "${callbackKey}"`)
-        .join(",\n");
+      const callbackEnums = callbacks.map(({ name: callbackKey }) => `${callbackKey} = "${callbackKey}"`).join(',\n');
 
       if (callbackEnums) {
         code += `
@@ -133,18 +122,11 @@ function signalRGenerator(json: HubJson): string {
             ${callbacks
               .map(
                 ({ name, parameters }) =>
-                  `[${callbackEnumsName}.${name}]: (${Object.entries(
-                    parameters,
-                  ).map(([_name, schema]) =>
-                    getDefineParam(
-                      _name,
-                      schema.required,
-                      (schema as unknown) as Schema,
-                      schema.description,
-                    ),
-                  )}) => void`,
+                  `[${callbackEnumsName}.${name}]: (${Object.entries(parameters).map(([_name, schema]) =>
+                    getDefineParam(_name, schema.required, (schema as unknown) as Schema, schema.description)
+                  )}) => void`
               )
-              .join(";\n")}
+              .join(';\n')}
             };\n`;
       }
 
@@ -156,7 +138,7 @@ function signalRGenerator(json: HubJson): string {
           callbacksName: ${callbackEnumsName};
           callbacks: ${hubsName}Callbacks;
         `
-            : ""
+            : ''
         }
         ${
           operationEnums
@@ -164,7 +146,7 @@ function signalRGenerator(json: HubJson): string {
           methodsName: ${operationEnumsName};
           methods: ${hubsName}Operations;
         `
-            : ""
+            : ''
         }
       }
       `;
@@ -174,7 +156,7 @@ function signalRGenerator(json: HubJson): string {
     return code;
   } catch (error) {
     console.error({ error });
-    return "";
+    return '';
   }
 }
 

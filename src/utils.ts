@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { Schema, Parameter, Config } from "./types";
 import { getJsdoc } from "./utilities/jsdoc";
 
@@ -99,7 +101,7 @@ const TYPES = {
 
 function getDefineParam(
   name: string,
-  required: boolean = false,
+  required = false,
   schema: Schema | undefined,
   description?: string,
 ): string {
@@ -108,7 +110,7 @@ function getDefineParam(
 
 function getParamString(
   name: string,
-  required: boolean = false,
+  required = false,
   type: string,
   description?: string,
   isPartial?: boolean,
