@@ -1,5 +1,5 @@
-import { isAscending } from './utils';
-import type { ConstantsAST } from './types';
+import { isAscending } from "./utils";
+import type { ConstantsAST } from "./types";
 
 function generateConstants(types: ConstantsAST[]): string {
   try {
@@ -9,10 +9,10 @@ function generateConstants(types: ConstantsAST[]): string {
         prev += `export const ${name} = ${value};`;
 
         return prev;
-      }, '');
+      }, "");
   } catch (error) {
     console.error({ error });
-    return '';
+    return "";
   }
 }
 

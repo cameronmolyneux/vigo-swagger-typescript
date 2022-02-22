@@ -1,8 +1,9 @@
-{
-  "swaggerUrl": "https://dev.api2.vigocloud.com/masterdata/swagger/v1/swagger.json",
-  "modelsFolder": "test/models",
-  "serviceFolder": "test/service",
-  "storeFolder": "test/store",
-  "serviceName": "masterdata",
-  "typesOnly": false
-}
+[
+  {
+    "swaggerUrl": "https://dev.api2.vigocloud.com/masterdata/swagger/v1/swagger.json",
+    "serviceFolder": "test/service/masterdata",
+    "modelsFolder": "test/models",
+    "serviceName": "masterdata"
+    }
+]
+

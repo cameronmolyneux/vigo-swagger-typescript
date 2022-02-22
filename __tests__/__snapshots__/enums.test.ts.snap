@@ -8,53 +8,14 @@ exports[`generate generate Code 1`] = `
 import { AxiosRequestConfig } from \\"axios\\";
 import { SwaggerResponse } from \\"./config\\";
 import { Http } from \\"./httpRequest\\";
-import { GetSettlementV1PrivateSettlementGetQueryParams, SettlementRequestResultListResponseVM,}  from \\"./types\\"
+import { GetPrivateSettlementGetQueryParams, SettlementRequestResultListResponseVM,}  from \\"./types\\"
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const __DEV__ = process.env.NODE_ENV !== \\"production\\";
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function overrideConfig(
-  config?: AxiosRequestConfig,
-  configOverride?: AxiosRequestConfig,
-): AxiosRequestConfig {
-  return {
-    ...config,
-    ...configOverride,
-    headers: {
-      ...config?.headers,
-      ...configOverride?.headers,
-    },
-  };
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function template(path: string, obj: { [x: string]: any } = {}) {
-    Object.keys(obj).forEach((key) => {
-      const re = new RegExp(\`{\${key}}\`, \\"i\\");
-      path = path.replace(re, obj[key]);
-    });
-
-    return path;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function objToForm(requestBody: object) {
-  const formData = new FormData();
-
-  Object.entries(requestBody).forEach(([key, value]) => {
-    value && formData.append(key, value);
-  });
-
-  return formData;
-}
-
-export const getSettlementV1PrivateSettlementGet = (
-    queryParams: GetSettlementV1PrivateSettlementGetQueryParams,configOverride?:AxiosRequestConfig
+export const getPrivateSettlementGet = (
+    queryParams: GetPrivateSettlementGetQueryParams,configOverride?:AxiosRequestConfig
 ): Promise<SwaggerResponse< & (SettlementRequestResultListResponseVM)>> => {
   
-  return Http.getRequest(
-    getSettlementV1PrivateSettlementGet.key,
+  return Http.get(
+    getPrivateSettlementGet.key,
     queryParams,
     undefined,
     _CONSTANT1,
@@ -65,7 +26,7 @@ export const getSettlementV1PrivateSettlementGet = (
 }
 
 /** Key is end point string without base url */
-getSettlementV1PrivateSettlementGet.key = \\"/settlement/v1/private/settlement/get\\";
+getPrivateSettlementGet.key = \\"/settlement/v1/private/settlement/get\\";
 export const _CONSTANT0 = {
               headers: {
                 \\"Content-Type\\": \\"application/json\\",
@@ -80,9 +41,9 @@ exports[`generate generate type 1`] = `
 "
 /**
 * AUTO_GENERATED Do not change this file directly, rerun the yarn vigo-swag-ts command*/
-
+ 
         
-        export interface GetSettlementV1PrivateSettlementGetQueryParams {\\"EndDate\\"?: string;\\"IsAuto\\"?: boolean;
+        export interface GetPrivateSettlementGetQueryParams {\\"EndDate\\"?: string;\\"IsAuto\\"?: boolean;
 /**
  * 
  * - Format: decimal
@@ -103,10 +64,10 @@ exports[`generate generate type 1`] = `
  * - Format: int64
  */
 \\"UserWalletId\\"?: number;\\"status\\"?: SettlementRequestStatus;}
-        
+         
         
         export type NotificationLevel =\\"Unknown\\" | \\"Default\\" | \\"Success\\" | \\"Info\\" | \\"Warning\\" | \\"Danger\\";
-        
+         
         
         export interface SettlementRequestResultListResponseVM {
 /**
@@ -114,7 +75,7 @@ exports[`generate generate type 1`] = `
  * - Format: int64
  */
 \\"totalCount\\": number;\\"settlementRequests\\"?: SettlementRequestResultResponseVM[];}
-        
+         
         
         export interface SettlementRequestResultResponseVM {\\"automaticSettlement\\": boolean;
 /**
@@ -147,7 +108,7 @@ exports[`generate generate type 1`] = `
  * - Format: int64
  */
 \\"userWalletId\\": number;\\"accountNumber\\"?: string;}
-        
+         
         
         export type SettlementRequestStatus =\\"Pending\\" | \\"Paid\\";
         "

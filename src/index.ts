@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { writeFileSync, existsSync, mkdirSync, readFileSync } from "fs";
-import { format } from "prettier";
-import { SwaggerJson, SwaggerConfig, Config } from "./types";
-import { FILE_HOOKS_CONFIG } from "./strings";
-import { getJson } from "./getJson";
-import { generator } from "./generator";
-import { majorVersionsCheck } from "./utils";
-import { swaggerToOpenApi } from "./utilities/swaggerToOpenApi";
-import { generateMock } from "./mock";
-import chalk from "chalk";
+import { writeFileSync, existsSync, mkdirSync, readFileSync } from 'fs';
+import { format } from 'prettier';
+import { SwaggerJson, SwaggerConfig, Config } from './types';
+import { HTTP_REQUEST, CONFIG, FILE_HOOKS_CONFIG } from './strings';
+import { getJson } from './getJson';
+import { generator } from './generator';
+import { majorVersionsCheck } from './utils';
+import { swaggerToOpenApi } from './utilities/swaggerToOpenApi';
+import { generateMock } from './mock';
+import chalk from 'chalk';
 
 /** @param config If isn't defined will be use swagger.config.json instead */
 async function generate(config?: SwaggerConfig, cli?: Partial<Config>) {
   config = config ?? getSwaggerConfig();
   const configs = Array.isArray(config) ? config : [config];
-  configs.forEach((con) => {
+  configs.forEach(con => {
     generateService(con, cli);
   });
 }
@@ -24,26 +24,14 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
   config = {
     ...config,
     tag: cli?.tag ?? config.tag,
-    local: cli?.local ?? config.local,
+    local: cli?.local ?? config.local
   };
 
-  const {
-    swaggerUrl,
-    modelsFolder,
-    serviceFolder,
-    storeFolder,
-    prettierPath,
-    mock,
-    local,
-    serviceName,
-  } = config;
-
-  const folderForModels =
-    modelsFolder === undefined ? serviceFolder : modelsFolder;
+  const { swaggerUrl, modelsFolder, serviceFolder, storeFolder, prettierPath, mock, local, serviceName } = config;
 
   // if we are building models, create folder
-  if (modelsFolder !== undefined && !existsSync(folderForModels)) {
-    mkdirSync(folderForModels);
+  if (modelsFolder !== undefined && !existsSync(modelsFolder)) {
+    mkdirSync(modelsFolder);
   }
 
   // of we are building services, create folder
@@ -56,9 +44,6 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
     mkdirSync(storeFolder);
   }
 
-  // eslint-disable-next-line no-debugger
-  debugger;
-
   const prettierOptions = getPrettierOptions(prettierPath);
 
   try {
@@ -68,17 +53,17 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
       input = getLocalJson(serviceFolder);
     } else {
       if (!swaggerUrl) {
-        throw new Error("Add url in swagger.config.json ");
+        throw new Error('Add url in swagger.config.json ');
       }
 
       input = await getJson(swaggerUrl);
 
       if (input.swagger) {
-        majorVersionsCheck("2.0.0", input.swagger);
+        majorVersionsCheck('2.0.0', input.swagger);
         // convert swagger v2 to openApi v3
         input = await swaggerToOpenApi(input);
       } else {
-        majorVersionsCheck("3.0.0", input.openapi);
+        majorVersionsCheck('3.0.0', input.openapi);
       }
     }
 
@@ -90,16 +75,26 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
 
     // write out the models
     if (modelsFolder !== undefined) {
-      writeFileSync(`${folderForModels}/${serviceName}.ts`, type);
-      formatFile(`${folderForModels}/${serviceName}.ts`, prettierOptions);
-      console.log(chalk.yellowBright("Models Completed"));
+      writeFileSync(`${modelsFolder}/${serviceName}.ts`, type);
+      formatFile(`${modelsFolder}/${serviceName}.ts`, prettierOptions);
+      console.log(chalk.yellowBright('Models Completed'));
     }
 
     // write out the services
     if (serviceFolder !== undefined) {
-      writeFileSync(`${serviceFolder}/${serviceName}Services.ts`, code);
-      formatFile(`${serviceFolder}/${serviceName}Services.ts`, prettierOptions);
-      console.log(chalk.yellowBright("Services Completed"));
+      writeFileSync(`${serviceFolder}/index.ts`, code);
+      formatFile(`${serviceFolder}/index.ts`, prettierOptions);
+      writeFileSync(`${serviceFolder}/httpRequest.ts`, HTTP_REQUEST);
+      formatFile(`${serviceFolder}/httpRequest.ts`, prettierOptions);
+
+      if (!existsSync(`${serviceFolder}/config.ts"`)) {
+        writeFileSync(
+          `${serviceFolder}/config.ts`,
+          CONFIG.replace('${AUTO_REPLACE_SERVICE_LOCATION}', serviceName || '')
+        );
+        formatFile(`${serviceFolder}/config.ts`, prettierOptions);
+      }
+      console.log(chalk.yellowBright('Services Completed'));
     }
 
     // write out the store
@@ -108,12 +103,12 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
       if (!existsSync(`${storeFolder}/hooksConfig.ts"`)) {
         writeFileSync(`${storeFolder}/hooksConfig.ts`, FILE_HOOKS_CONFIG);
       }
-      console.log(chalk.yellowBright("Redux stores Completed"));
+      console.log(chalk.yellowBright('Redux stores Completed'));
     }
-    console.log(chalk.greenBright("All Completed"));
+    console.log(chalk.greenBright('All Completed'));
   } catch (error) {
     console.log(chalk.redBright(error));
-    console.log(chalk.redBright("failed"));
+    console.log(chalk.redBright('failed'));
   }
 };
 
@@ -124,18 +119,18 @@ function formatFile(filePath: string, prettierOptions: any) {
 
 function getSwaggerConfig(): SwaggerConfig {
   try {
-    const config = JSON.parse(readFileSync("swagger.config.json").toString());
+    const config = JSON.parse(readFileSync('swagger.config.json').toString());
 
     if (!config) {
-      throw "";
+      throw '';
     }
 
     return config;
   } catch (error) {
     try {
-      return JSON.parse(readFileSync("./swaggerConfig.json").toString()); // backward compatible for  v1
+      return JSON.parse(readFileSync('./swaggerConfig.json').toString()); // backward compatible for  v1
     } catch {
-      throw new Error("Please define swagger.config.json");
+      throw new Error('Please define swagger.config.json');
     }
   }
 }
@@ -145,15 +140,15 @@ function getPrettierOptions(prettierPath?: string) {
   if (prettierPath && existsSync(prettierPath)) {
     prettierOptions = JSON.parse(readFileSync(prettierPath).toString());
   } else {
-    if (existsSync(".prettierrc")) {
-      prettierOptions = JSON.parse(readFileSync(".prettierrc").toString());
-    } else if (existsSync("prettier.json")) {
-      prettierOptions = JSON.parse(readFileSync("prettier.json").toString());
+    if (existsSync('.prettierrc')) {
+      prettierOptions = JSON.parse(readFileSync('.prettierrc').toString());
+    } else if (existsSync('prettier.json')) {
+      prettierOptions = JSON.parse(readFileSync('prettier.json').toString());
     }
   }
 
   if (!prettierOptions.parser) {
-    prettierOptions.parser = "typescript";
+    prettierOptions.parser = 'typescript';
   }
 
   return prettierOptions;
@@ -167,7 +162,7 @@ function getLocalJson(dir: string) {
     return JSON.parse(old);
   } catch (error) {
     chalk.red(
-      "swagger.json file not found. You should set keepJson true to save json then run vigo-swag-ts without tag to save that",
+      'swagger.json file not found. You should set keepJson true to save json then run vigo-swag-ts without tag to save that'
     );
     throw error;
   }

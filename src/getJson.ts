@@ -13,5 +13,5 @@ async function getJson(url: string) {
   }
   return yaml.load(data);
 }
-
+//export
 export { getJson };

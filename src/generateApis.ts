@@ -1,6 +1,6 @@
 import { getTsType, isAscending, getDefineParam, getParamString, getSchemaName, isMatchWholeWord } from './utils';
 import { ApiAST, TypeAST } from './types';
-import { SERVICE_BEGINNING, SERVICE_NEEDED_FUNCTIONS, DEPRECATED_WARM_MESSAGE } from './strings';
+import { SERVICE_BEGINNING, DEPRECATED_WARM_MESSAGE } from './strings';
 import { getJsdoc } from './utilities/jsdoc';
 
 function generateApis(apis: ApiAST[], types: TypeAST[]): string {
@@ -66,7 +66,7 @@ ${getJsdoc({
   }`
       : ''
   }
-  return Http.${method}Request(
+  return Http.${method}(
     ${pathParamsRefString ? `template(${serviceName}.key,${pathParamsRefString})` : `${serviceName}.key`},
     ${queryParamsTypeName ? 'queryParams' : 'undefined'},
     ${
@@ -102,7 +102,6 @@ ${serviceName}.key = "${endPoint}";
         return prev + ` ${name},`;
       }, 'import {') + '}  from "./types"\n';
 
-    code += SERVICE_NEEDED_FUNCTIONS;
     code += apisCode;
     return code;
   } catch (error) {

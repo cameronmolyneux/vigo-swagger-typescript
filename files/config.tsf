@@ -1,25 +1,22 @@
-/**
- * You can modify this file
- *
- * @version 5
- */
 import Axios, {
   AxiosRequestConfig,
   AxiosError,
   AxiosResponse,
   AxiosInstance,
 } from "axios";
-//@ts-ignore
 import qs from "qs";
+import { ServiceLocation } from '../../../utils/serviceLocationsAxios';
+import { msalInstance } from '../utils/createMSAL';
+import { tenantRequest } from '../authConfig';
+import { v4 as uuidv4 } from 'uuid';
 
 const baseConfig: AxiosRequestConfig = {
-  baseURL: "${AUTO_REPLACE_BASE_URL}", // <--- Add your base url
-  headers: {
-    "Content-Encoding": "UTF-8",
-    Accept: "application/json",
-    "Content-Type": "application/json-patch+json",
-  },
-  paramsSerializer: (param) => qs.stringify(param, { indices: false }),
+  baseURL: ServiceLocation.${AUTO_REPLACE_SERVICE_LOCATION},
+  paramsSerializer: params => qs.stringify(params, { arrayFormat: 'repeat' }),
+    headers: {
+      'Content-Type': 'application/json',
+      ...headers
+    }
 };
 
 let axiosInstance: AxiosInstance;
@@ -72,19 +69,21 @@ function getAxiosInstance(security: Security): AxiosInstance {
 
   // ًًRequest interceptor
   axiosInstance.interceptors.request.use(
-    async (requestConfig) => {
-      // Do something before request is sent
-      /** Example on how to add authorization based on security */
-      if (security?.[0]) {
-        // requestConfig.headers.authorization = "";
-      }
-
-      return requestConfig;
+    async config => {
+      const accessToken = await msalInstance.acquireTokenSilent(tenantRequest);
+      const requestId = uuidv4();
+      config.headers = {
+        Authorization: `Bearer ${accessToken.accessToken}`,
+        Accept: 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'x-tenantId': localStorage.getItem('currentTenantId'),
+        'x-requestId': requestId
+      };
+      return config;
     },
-    (error) => {
-      // Do something with request error
-      return Promise.reject(error);
-    },
+    error => {
+      Promise.reject(error);
+    }
   );
 
   return axiosInstance;

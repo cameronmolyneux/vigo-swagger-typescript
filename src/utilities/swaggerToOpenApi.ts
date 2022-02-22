@@ -1,6 +1,8 @@
-import { SwaggerJson } from '../types';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { SwaggerJson } from "../types";
 //@ts-ignore
-import converter from 'swagger2openapi';
+import converter from "swagger2openapi";
 
 /** Support swagger v2 */
 function swaggerToOpenApi(input: SwaggerJson) {

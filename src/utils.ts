@@ -1,25 +1,21 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import { Schema, Parameter, Config } from "./types";
-import { getJsdoc } from "./utilities/jsdoc";
+import { Schema, Parameter, Config } from './types';
+import { getJsdoc } from './utilities/jsdoc';
 
 function getPathParams(parameters?: Parameter[]): Parameter[] {
   return (
     parameters?.filter(({ in: In }) => {
-      return In === "path";
+      return In === 'path';
     }) || []
   );
 }
 
 function getHeaderParams(parameters?: Parameter[], config?: Config) {
-  return getParams(parameters, "header", config?.ignore?.headerParams);
+  return getParams(parameters, 'header', config?.ignore?.headerParams);
 }
 
-function getParams(
-  parameters: Parameter[] | undefined,
-  type: "query" | "header",
-  ignoreParams?: string[],
-) {
+function getParams(parameters: Parameter[] | undefined, type: 'query' | 'header', ignoreParams?: string[]) {
   const queryParamsArray =
     parameters?.filter(({ in: In, name }) => {
       return In === type && !ignoreParams?.includes(name);
@@ -29,7 +25,7 @@ function getParams(
 
   return {
     params,
-    hasNullable: queryParamsArray.every(({ schema = {} }) => schema.nullable),
+    hasNullable: queryParamsArray.every(({ schema = {} }) => schema.nullable)
   };
 }
 
@@ -38,45 +34,46 @@ function toPascalCase(str: string): string {
 }
 function replaceWithUpper(str: string, sp: string) {
   let pointArray = str.split(sp);
-  pointArray = pointArray.map((point) => toPascalCase(point));
+  pointArray = pointArray.map(point => toPascalCase(point));
 
-  return pointArray.join("");
+  return pointArray.join('');
 }
 
 function generateServiceName(
   endPoint: string,
   method: string,
   operationId: string | undefined,
-  config: Config,
+  config: Config
 ): string {
-  const { methodName, methodParamsByTag, prefix = "" } = config;
+  // eslint-disable-next-line no-debugger
+  debugger;
+  const { methodName, methodParamsByTag, prefix = '' } = config;
 
-  const _endPoint = endPoint.replace(new RegExp(`^${prefix}`, "i"), "");
-  let endPointArr = _endPoint.split("/");
+  const _endPoint = endPoint.replace(new RegExp(`^${prefix}`, 'i'), '');
+  let endPointArr = _endPoint.split('/');
   let paramsCount = 0;
-  endPointArr = endPointArr.map((value) => {
-    if (value.includes("{")) {
-      return methodParamsByTag
-        ? `P${paramsCount++}`
-        : toPascalCase(value.replace("{", "").replace("}", ""));
+  endPointArr = endPointArr.map(value => {
+    if (value.includes('{')) {
+      return methodParamsByTag ? `P${paramsCount++}` : toPascalCase('By' + value.replace('{', '').replace('}', ''));
     }
 
-    return replaceWithUpper(value, "-");
+    return replaceWithUpper(value, '-');
   });
-  const path = endPointArr.join("");
+  const output = endPointArr.slice(3);
+  const path = output.join('');
 
   const methodNameTemplate = getTemplate(methodName, operationId);
 
   const serviceName = template(methodNameTemplate, {
     path,
     method,
-    ...(operationId ? { operationId } : {}),
+    ...(operationId ? { operationId } : {})
   });
   return serviceName;
 }
 
 function getTemplate(methodName?: string, operationId?: string) {
-  const defaultTemplate = "{method}{path}";
+  const defaultTemplate = '{method}{path}';
   if (!methodName) {
     return defaultTemplate;
   }
@@ -91,20 +88,15 @@ function getTemplate(methodName?: string, operationId?: string) {
 }
 
 const TYPES = {
-  integer: "number",
-  number: "number",
-  boolean: "boolean",
-  object: "object",
-  string: "string",
-  array: "array",
+  integer: 'number',
+  number: 'number',
+  boolean: 'boolean',
+  object: 'object',
+  string: 'string',
+  array: 'array'
 };
 
-function getDefineParam(
-  name: string,
-  required = false,
-  schema: Schema | undefined,
-  description?: string,
-): string {
+function getDefineParam(name: string, required = false, schema: Schema | undefined, description?: string): string {
   return getParamString(name, required, getTsType(schema), description);
 }
 
@@ -113,82 +105,68 @@ function getParamString(
   required = false,
   type: string,
   description?: string,
-  isPartial?: boolean,
+  isPartial?: boolean
 ): string {
   return `${getJsdoc({
-    description,
-  })}${name}${required ? "" : "?"}: ${isPartial ? `Partial<${type}>` : type}`;
+    description
+  })}${name}${required ? '' : '?'}: ${isPartial ? `Partial<${type}>` : type}`;
 }
 
 function getTsType(schema: undefined | true | {} | Schema): string {
   if (isTypeAny(schema)) {
-    return "any";
+    return 'any';
   }
 
-  const {
-    type,
-    $ref,
-    enum: Enum,
-    items,
-    properties,
-    oneOf,
-    additionalProperties,
-    required,
-    allOf,
-  } = schema as Schema;
+  const { type, $ref, enum: Enum, items, properties, oneOf, additionalProperties, required, allOf } = schema as Schema;
 
   if ($ref) {
-    const refArray = $ref.split("/");
-    if (refArray[refArray.length - 2] === "requestBodies") {
+    const refArray = $ref.split('/');
+    if (refArray[refArray.length - 2] === 'requestBodies') {
       return `RequestBody${getRefName($ref)}`;
     } else {
       return getRefName($ref);
     }
   }
   if (Enum) {
-    return `${Enum.map((t) => `"${t}"`).join(" | ")}`;
+    return `${Enum.map(t => `"${t}"`).join(' | ')}`;
   }
 
   if (items) {
     return `${getTsType(items)}[]`;
   }
 
-  let result = "";
+  let result = '';
 
   if (properties) {
     result += getObjectType(
       Object.entries(properties).map(([pName, _schema]) => ({
         schema: {
           ..._schema,
-          nullable: required?.find((name) => name === pName)
+          nullable: required?.find(name => name === pName)
             ? false
             : _schema.nullable !== undefined
             ? _schema.nullable
-            : true,
+            : true
         },
-        name: pName,
-      })),
+        name: pName
+      }))
     );
   }
 
   if (oneOf) {
-    result = `${result} & (${oneOf
-      .map((t) => `(${getTsType(t)})`)
-      .join(" | ")})`;
+    result = `${result} & (${oneOf.map(t => `(${getTsType(t)})`).join(' | ')})`;
   }
 
   if (allOf) {
-    result = `${result} & (${allOf
-      .map((_schema) => getTsType(_schema))
-      .join(" & ")})`;
+    result = `${result} & (${allOf.map(_schema => getTsType(_schema)).join(' & ')})`;
   }
 
-  if (type === "object" && !result) {
+  if (type === 'object' && !result) {
     if (additionalProperties) {
       return `{[x: string]: ${getTsType(additionalProperties)}}`;
     }
 
-    return "{[x in string | number ]: any}";
+    return '{[x in string | number ]: any}';
   }
 
   return result || TYPES[type as keyof typeof TYPES];
@@ -196,57 +174,42 @@ function getTsType(schema: undefined | true | {} | Schema): string {
 
 function getObjectType(parameter: { schema?: Schema; name: string }[]) {
   const object = parameter
-    .sort(
-      (
-        { name, schema: { nullable } = {} },
-        { name: _name, schema: { nullable: _nullable } = {} },
-      ) => {
-        if (!nullable && _nullable) {
-          return -1;
-        } else if (nullable && !_nullable) {
-          return 1;
-        }
+    .sort(({ name, schema: { nullable } = {} }, { name: _name, schema: { nullable: _nullable } = {} }) => {
+      if (!nullable && _nullable) {
+        return -1;
+      } else if (nullable && !_nullable) {
+        return 1;
+      }
 
-        return isAscending(name, _name);
-      },
-    )
+      return isAscending(name, _name);
+    })
     .reduce(
       (
         prev,
-        {
-          schema: {
-            deprecated,
-            "x-deprecatedMessage": deprecatedMessage,
-            example,
-            nullable,
-          } = {},
-          schema,
-          name,
-        },
+        { schema: { deprecated, 'x-deprecatedMessage': deprecatedMessage, example, nullable } = {}, schema, name }
       ) => {
         return `${prev}${getJsdoc({
           ...schema,
-          deprecated:
-            deprecated || deprecatedMessage ? deprecatedMessage : undefined,
-          example,
-        })}"${name}"${nullable ? "?" : ""}: ${getTsType(schema)};`;
+          deprecated: deprecated || deprecatedMessage ? deprecatedMessage : undefined,
+          example
+        })}"${name}"${nullable ? '?' : ''}: ${getTsType(schema)};`;
       },
-      "",
+      ''
     );
 
-  return object ? `{${object}}` : "";
+  return object ? `{${object}}` : '';
 }
 function getSchemaName(name: string): string {
-  const removeDot = replaceWithUpper(name, ".");
-  const removeBackTick = replaceWithUpper(removeDot, "`");
-  const removeFirstBracket = replaceWithUpper(removeBackTick, "[");
-  const removeLastBracket = replaceWithUpper(removeFirstBracket, "]");
+  const removeDot = replaceWithUpper(name, '.');
+  const removeBackTick = replaceWithUpper(removeDot, '`');
+  const removeFirstBracket = replaceWithUpper(removeBackTick, '[');
+  const removeLastBracket = replaceWithUpper(removeFirstBracket, ']');
   return removeLastBracket;
 }
 
 function getRefName($ref: string): string {
-  const parts = $ref.split("/").pop();
-  return getSchemaName(parts || "");
+  const parts = $ref.split('/').pop();
+  return getSchemaName(parts || '');
 }
 
 function isAscending(a: string, b: string) {
@@ -259,10 +222,7 @@ function isAscending(a: string, b: string) {
   return 0;
 }
 
-function getParametersInfo(
-  parameters: Parameter[] | undefined,
-  type: "query" | "header",
-) {
+function getParametersInfo(parameters: Parameter[] | undefined, type: 'query' | 'header') {
   const params =
     parameters?.filter(({ in: In }) => {
       return In === type;
@@ -271,25 +231,25 @@ function getParametersInfo(
   return {
     params,
     exist: params.length > 0,
-    isNullable: params.every(({ schema }) => schema?.nullable),
+    isNullable: params.every(({ schema }) => schema?.nullable)
   };
 }
 
 function majorVersionsCheck(expectedV: string, inputV?: string) {
   if (!inputV) {
     throw new Error(
-      `Swagger-Typescript working with openApi v3/ swagger v2, seem your json is not openApi openApi v3/ swagger v2`,
+      `Swagger-Typescript working with openApi v3/ swagger v2, seem your json is not openApi openApi v3/ swagger v2`
     );
   }
 
-  const expectedVMajor = expectedV.split(".")[0];
-  const inputVMajor = inputV.split(".")[0];
+  const expectedVMajor = expectedV.split('.')[0];
+  const inputVMajor = inputV.split('.')[0];
   function isValidPart(x: string) {
     return /^\d+$/.test(x);
   }
   if (!isValidPart(expectedVMajor) || !isValidPart(inputVMajor)) {
     throw new Error(
-      `Swagger-Typescript working with openApi v3/ swagger v2 your json openApi version is not valid "${inputV}"`,
+      `Swagger-Typescript working with openApi v3/ swagger v2 your json openApi version is not valid "${inputV}"`
     );
   }
 
@@ -300,9 +260,7 @@ function majorVersionsCheck(expectedV: string, inputV?: string) {
     return;
   }
 
-  throw new Error(
-    `Swagger-Typescript working with openApi v3/ swagger v2 your json openApi version is ${inputV}`,
-  );
+  throw new Error(`Swagger-Typescript working with openApi v3/ swagger v2 your json openApi version is ${inputV}`);
 }
 
 function isTypeAny(type: true | undefined | {} | Schema) {
@@ -310,7 +268,7 @@ function isTypeAny(type: true | undefined | {} | Schema) {
     return true;
   }
 
-  if (typeof type === "object" && Object.keys(type).length <= 0) {
+  if (typeof type === 'object' && Object.keys(type).length <= 0) {
     return true;
   }
 
@@ -324,11 +282,11 @@ function isTypeAny(type: true | undefined | {} | Schema) {
 /** Used to replace {name} in string with obj.name */
 function template(str: string, obj: { [x: string]: string } = {}) {
   Object.entries(obj).forEach(([key, value]) => {
-    const re = new RegExp(`{${key}}`, "i");
+    const re = new RegExp(`{${key}}`, 'i');
     str = str.replace(re, value);
   });
 
-  const re = new RegExp("{*}", "g");
+  const re = new RegExp('{*}', 'g');
   if (re.test(str)) {
     throw new Error(`methodName: Some A key is missed "${str}"`);
   }
@@ -336,7 +294,7 @@ function template(str: string, obj: { [x: string]: string } = {}) {
 }
 
 function isMatchWholeWord(stringToSearch: string, word: string) {
-  return new RegExp("\\b" + word + "\\b").test(stringToSearch);
+  return new RegExp('\\b' + word + '\\b').test(stringToSearch);
 }
 
 export {
@@ -354,5 +312,5 @@ export {
   template,
   toPascalCase,
   getSchemaName,
-  isMatchWholeWord,
+  isMatchWholeWord
 };

@@ -61,6 +61,7 @@ function assignToDescription(params: JsdocAST) {
   }`;
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 function getJsdoc(doc: JsdocAST) {
   const descriptionWithDetails = assignToDescription(doc);
 

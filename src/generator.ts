@@ -48,11 +48,14 @@ function generator(input: SwaggerJson, config: Config): { code: string; hooks: s
 
   try {
     Object.entries(input.paths).forEach(([endPoint, value]) => {
+      const version = input.info.version;
       const parametersExtended = value.parameters as Parameter[] | undefined;
       Object.entries(value).forEach(([method, options]: [string, SwaggerRequest]) => {
         if (method === 'parameters') {
           return;
         }
+
+        endPoint = endPoint.replace('v{apiversion}', version);
 
         const { operationId, security } = options;
 
@@ -84,7 +87,7 @@ function generator(input: SwaggerJson, config: Config): { code: string; hooks: s
           'query'
         );
         let queryParamsTypeName: string | false = `${toPascalCase(serviceName)}QueryParams`;
-
+        console.log(queryParamsTypeName);
         queryParamsTypeName = queryParams && queryParamsTypeName;
 
         if (queryParamsTypeName) {

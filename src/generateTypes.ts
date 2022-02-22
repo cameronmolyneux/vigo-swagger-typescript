@@ -10,7 +10,7 @@ function generateTypes(types: TypeAST[], config: Partial<Config>): string {
       .sort(({ name }, { name: _name }) => isAscending(name, _name))
       .reduce((prev, { name: _name, schema, description }) => {
         const name = getSchemaName(_name);
-        prev += `
+        prev += ` 
         ${getJsdoc({
           ...schema,
           description: description || schema?.description,

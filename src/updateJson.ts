@@ -1,10 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import chalk from 'chalk';
-import type { SwaggerRequest, SwaggerJson, PathItem, Components } from './types';
+import chalk from "chalk";
+import type {
+  SwaggerRequest,
+  SwaggerJson,
+  PathItem,
+  Components,
+} from "./types";
 
-function partialUpdateJson(input: SwaggerJson, newJson: SwaggerJson, tag: string[]): SwaggerJson {
+function partialUpdateJson(
+  input: SwaggerJson,
+  newJson: SwaggerJson,
+  tag: string[],
+): SwaggerJson {
   let refs: string[] = [];
 
   const filteredPaths = Object.fromEntries(
@@ -12,30 +21,32 @@ function partialUpdateJson(input: SwaggerJson, newJson: SwaggerJson, tag: string
       name,
       Object.fromEntries(
         (Object.entries(value) as [string, SwaggerRequest][]).filter(
-          ([_, { tags }]) => !tags?.find(item => tag.find(i => i === item))
-        )
-      )
-    ])
+          ([_, { tags }]) => !tags?.find((item) => tag.find((i) => i === item)),
+        ),
+      ),
+    ]),
   );
 
-  const paths: SwaggerJson['paths'] = { ...filteredPaths };
+  const paths: SwaggerJson["paths"] = { ...filteredPaths };
   Object.entries(newJson.paths).forEach(([endPoint, value]) => {
-    (Object.entries(value) as [keyof PathItem, SwaggerRequest][]).forEach(([method, options]) => {
-      if (typeof options !== 'object') {
-        return;
-      }
-
-      if (tag.find(t => options.tags?.includes(t))) {
-        refs = refs.concat(findRefs(options));
-
-        if (!paths[endPoint]) {
-          paths[endPoint] = {
-            ...newJson.paths[endPoint]
-          };
+    (Object.entries(value) as [keyof PathItem, SwaggerRequest][]).forEach(
+      ([method, options]) => {
+        if (typeof options !== "object") {
+          return;
         }
-        paths[endPoint][method] = options as any;
-      }
-    });
+
+        if (tag.find((t) => options.tags?.includes(t))) {
+          refs = refs.concat(findRefs(options));
+
+          if (!paths[endPoint]) {
+            paths[endPoint] = {
+              ...newJson.paths[endPoint],
+            };
+          }
+          paths[endPoint][method] = options as any;
+        }
+      },
+    );
   });
 
   refs = findRelatedRef(newJson, refs);
@@ -45,19 +56,19 @@ function partialUpdateJson(input: SwaggerJson, newJson: SwaggerJson, tag: string
   return {
     ...input,
     paths,
-    components
+    components,
   };
 }
 
 function findRelatedRef(newJson: SwaggerJson, refs: string[]): string[] {
   try {
-    (['schemas', 'requestBodies', 'parameters'] as const).map(key => {
+    (["schemas", "requestBodies", "parameters"] as const).map((key) => {
       if (newJson?.components?.[key]) {
         Object.entries(newJson.components[key]!).forEach(([name, schema]) => {
           if (refs.includes(name)) {
             const schemaRefs = findRefs(schema);
 
-            const newRefs = schemaRefs.filter(ref => !refs.includes(ref));
+            const newRefs = schemaRefs.filter((ref) => !refs.includes(ref));
 
             if (newRefs.length > 0) {
               refs = findRelatedRef(newJson, [...refs, ...newRefs]);
@@ -73,18 +84,22 @@ function findRelatedRef(newJson: SwaggerJson, refs: string[]): string[] {
   return refs;
 }
 
-function replaceComponents(input: SwaggerJson, newJson: SwaggerJson, refs: string[]) {
+function replaceComponents(
+  input: SwaggerJson,
+  newJson: SwaggerJson,
+  refs: string[],
+) {
   const components: Components = {
-    ...input.components
+    ...input.components,
   };
 
-  (['schemas', 'requestBodies', 'parameters'] as const).map(key => {
+  (["schemas", "requestBodies", "parameters"] as const).map((key) => {
     if (newJson?.components?.[key]) {
       Object.entries(newJson.components[key]!).forEach(([name, schema]) => {
         if (refs.includes(name)) {
           if (!components[key]) {
             components[key] = {
-              ...input.components![key]
+              ...input.components![key],
             } as any;
           }
           components[key]![name] = schema;
@@ -96,20 +111,22 @@ function replaceComponents(input: SwaggerJson, newJson: SwaggerJson, refs: strin
   return components;
 }
 
-function findRefs(obj?: Record<string, any> | string | number | any[]): string[] {
-  if (typeof obj !== 'object') {
+function findRefs(
+  obj?: Record<string, any> | string | number | any[],
+): string[] {
+  if (typeof obj !== "object") {
     return [];
   }
 
   if (Array.isArray(obj)) {
-    return obj.flatMap(value => {
+    return obj.flatMap((value) => {
       return findRefs(value);
     });
   }
 
   return Object.entries(obj).flatMap(([key, value]) => {
-    if (key === '$ref') {
-      return [value.replace(/#\/components\/[\w]+\//g, '')];
+    if (key === "$ref") {
+      return [value.replace(/#\/components\/[\w]+\//g, "")];
     }
     return findRefs(value);
   });
