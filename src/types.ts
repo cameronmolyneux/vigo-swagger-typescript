@@ -242,7 +242,7 @@ export interface InfoObject {
 export interface Config {
   swaggerUrl?: string;
   serviceName?: string;
-  serviceFolder: string;
+  serviceRootFolder: string;
   modelsFolder?: string;
   storeFolder?: string;
   /** Default is false */

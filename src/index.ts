@@ -27,19 +27,25 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
     local: cli?.local ?? config.local
   };
 
-  const { swaggerUrl, modelsFolder, serviceFolder, storeFolder, prettierPath, mock, local, serviceName } = config;
+  const { swaggerUrl, modelsFolder, serviceRootFolder, storeFolder, prettierPath, mock, local, serviceName } = config;
+
+  const serviceFolder = serviceRootFolder + '/' + serviceName;
 
   // if we are building models, create folder
   if (modelsFolder !== undefined && !existsSync(modelsFolder)) {
     mkdirSync(modelsFolder);
   }
 
-  // of we are building services, create folder
+  // if we are building services, create folder
+  if (serviceRootFolder !== undefined && !existsSync(serviceRootFolder)) {
+    mkdirSync(serviceRootFolder);
+  }
+  // and build the actual service folder if it does not exsit
   if (serviceFolder !== undefined && !existsSync(serviceFolder)) {
     mkdirSync(serviceFolder);
   }
 
-  // of we are building store, create folder
+  // if we are building store, create folder
   if (storeFolder !== undefined && !existsSync(storeFolder)) {
     mkdirSync(storeFolder);
   }
@@ -50,7 +56,7 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
     let input: SwaggerJson;
 
     if (local) {
-      input = getLocalJson(serviceFolder);
+      input = getLocalJson(serviceRootFolder);
     } else {
       if (!swaggerUrl) {
         throw new Error('Add url in swagger.config.json ');
@@ -81,18 +87,17 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
     }
 
     // write out the services
-    if (serviceFolder !== undefined) {
+    if (serviceRootFolder !== undefined) {
       writeFileSync(`${serviceFolder}/index.ts`, code);
-      formatFile(`${serviceFolder}/index.ts`, prettierOptions);
-      writeFileSync(`${serviceFolder}/httpRequest.ts`, HTTP_REQUEST);
-      formatFile(`${serviceFolder}/httpRequest.ts`, prettierOptions);
-
-      if (!existsSync(`${serviceFolder}/config.ts"`)) {
+      //formatFile(`${serviceFolder}/index.ts`, prettierOptions);
+      if (!existsSync(`${serviceRootFolder}/config.ts"`)) {
         writeFileSync(
-          `${serviceFolder}/config.ts`,
+          `${serviceRootFolder}/config.ts`,
           CONFIG.replace('${AUTO_REPLACE_SERVICE_LOCATION}', serviceName || '')
         );
-        formatFile(`${serviceFolder}/config.ts`, prettierOptions);
+        formatFile(`${serviceRootFolder}/config.ts`, prettierOptions);
+        writeFileSync(`${serviceRootFolder}/httpRequest.ts`, HTTP_REQUEST);
+        formatFile(`${serviceRootFolder}/httpRequest.ts`, prettierOptions);
       }
       console.log(chalk.yellowBright('Services Completed'));
     }

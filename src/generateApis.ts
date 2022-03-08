@@ -1,11 +1,12 @@
 import { getTsType, isAscending, getDefineParam, getParamString, getSchemaName, isMatchWholeWord } from './utils';
-import { ApiAST, TypeAST } from './types';
+import { ApiAST, Config, TypeAST } from './types';
 import { SERVICE_BEGINNING, DEPRECATED_WARM_MESSAGE } from './strings';
 import { getJsdoc } from './utilities/jsdoc';
 
-function generateApis(apis: ApiAST[], types: TypeAST[]): string {
+function generateApis(apis: ApiAST[], types: TypeAST[], config: Config): string {
   let code = SERVICE_BEGINNING;
   try {
+    const service = config.modelsFolder + '/' + config.serviceName;
     const apisCode = apis
       .sort(({ serviceName }, { serviceName: _serviceName }) => isAscending(serviceName, _serviceName))
       .reduce(
@@ -19,15 +20,10 @@ function generateApis(apis: ApiAST[], types: TypeAST[]): string {
             queryParamsTypeName,
             pathParams,
             requestBody,
-            headerParams,
             isQueryParamsNullable,
-            isHeaderParamsNullable,
             responses,
             method,
-            endPoint,
-            pathParamsRefString,
-            additionalAxiosConfig,
-            security
+            endPoint
           }
         ) => {
           return (
@@ -50,11 +46,8 @@ ${getJsdoc({
               queryParamsTypeName
                 ? `${getParamString('queryParams', !isQueryParamsNullable, queryParamsTypeName)},`
                 : ''
-            }${
-              /** Header parameters */
-              headerParams ? `${getParamString('headerParams', !isHeaderParamsNullable, headerParams)},` : ''
             }configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<${responses ? getTsType(responses) : 'any'}>> => {
+): Promise<VigoResponse<${responses ? getTsType(responses) : 'any'}>> => {
   ${
     deprecated
       ? `
@@ -66,8 +59,7 @@ ${getJsdoc({
   }`
       : ''
   }
-  return Http.${method}(
-    ${pathParamsRefString ? `template(${serviceName}.key,${pathParamsRefString})` : `${serviceName}.key`},
+  return Http.${method}(ServiceLocation.${config.serviceName} + '${endPoint}',
     ${queryParamsTypeName ? 'queryParams' : 'undefined'},
     ${
       requestBody
@@ -76,15 +68,9 @@ ${getJsdoc({
           : 'requestBody'
         : 'undefined'
     },
-    ${security},
-    overrideConfig(${additionalAxiosConfig},
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-${serviceName}.key = "${endPoint}";
 `
           );
         },
@@ -100,7 +86,10 @@ ${serviceName}.key = "${endPoint}";
         }
 
         return prev + ` ${name},`;
-      }, 'import {') + '}  from "./types"\n';
+      }, 'import {') +
+      '}  from "../../../' +
+      service +
+      '"\n';
 
     code += apisCode;
     return code;

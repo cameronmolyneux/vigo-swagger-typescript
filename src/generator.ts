@@ -21,7 +21,6 @@ import type {
 } from './types';
 import { generateApis } from './generateApis';
 import { generateTypes } from './generateTypes';
-import { generateConstants } from './generateConstants';
 import { generateHook } from './generateHook';
 
 function generator(input: SwaggerJson, config: Config): { code: string; hooks: string; type: string } {
@@ -122,6 +121,7 @@ function generator(input: SwaggerJson, config: Config): { code: string; hooks: s
             }
         )[0] as ApiAST['contentType'];
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const accept = Object.keys(
           options.responses?.[200]?.content || {
             'application/json': null
@@ -133,23 +133,7 @@ function generator(input: SwaggerJson, config: Config): { code: string; hooks: s
         let pathParamsRefString: string | undefined = pathParams.reduce((prev, { name }) => `${prev}${name},`, '');
         pathParamsRefString = pathParamsRefString ? `{${pathParamsRefString}}` : undefined;
 
-        const additionalAxiosConfig = headerParams
-          ? `{
-              headers:{
-                ...${getConstantName(`{
-                  "Content-Type": "${contentType}",
-                  Accept: "${accept}",
-
-                }`)},
-                ...headerParams,
-              },
-            }`
-          : getConstantName(`{
-              headers: {
-                "Content-Type": "${contentType}",
-                Accept: "${accept}",
-              },
-            }`);
+        const additionalAxiosConfig = '';
 
         apis.push({
           contentType,
@@ -208,8 +192,8 @@ function generator(input: SwaggerJson, config: Config): { code: string; hooks: s
       );
     }
 
-    let code = generateApis(apis, types);
-    code += generateConstants(constants);
+    const code = generateApis(apis, types, config);
+    //code += generateConstants(constants);
     const type = generateTypes(types, config);
     const hooks = config.reactHooks ? generateHook(apis, types, config) : '';
 

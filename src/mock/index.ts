@@ -11,9 +11,9 @@ import { existsSync, mkdirSync } from "fs";
 import { Config } from "../types";
 
 function generateMock(content: any, config: Config) {
-  const { serviceFolder } = config;
+  const { serviceRootFolder } = config;
   try {
-    const output = `${serviceFolder}/mocks`;
+    const output = `${serviceRootFolder}/mocks`;
     const responses = extractResponses(content, config);
     const schemas = extractSchemas(content);
     const composed = composeMockData(responses, schemas);

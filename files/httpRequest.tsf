@@ -1,10 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * AUTO_GENERATED Do not change this file directly, use config.ts file instead
- *
- * @version 5
  */
 import axios, { AxiosRequestConfig, CancelToken } from "axios";
-import { getAxiosInstance, Security, SwaggerResponse } from "./config";
+import { getAxiosInstance, VigoResponse } from "./config";
 
 /**
  * Cancellation handled here, you can cancel request by call promise.cancel()
@@ -31,76 +30,70 @@ function cancellation<T>(
 }
 
 export const Http = {
-  getRequest(
+  get(
     url: string,
     queryParams: any | undefined,
-    //@ts-ignore
     _requestBody: undefined,
-    security: Security,
     configOverride?: AxiosRequestConfig,
-  ): Promise<SwaggerResponse<any>> {
+  ): Promise<VigoResponse<any>> {
     return cancellation((cancelToken) =>
-      getAxiosInstance(security).get(url, {
+      getAxiosInstance().get(url, {
         cancelToken,
         params: queryParams,
         ...configOverride,
       }),
     );
   },
-  postRequest(
+  post(
     url: string,
     queryParams: any | undefined,
     requestBody: any | undefined,
-    security: Security,
     configOverride?: AxiosRequestConfig,
-  ): Promise<SwaggerResponse<any>> {
+  ): Promise<VigoResponse<any>> {
     return cancellation((cancelToken) =>
-      getAxiosInstance(security).post(url, requestBody, {
+      getAxiosInstance().post(url, requestBody, {
         cancelToken,
         params: queryParams,
         ...configOverride,
       }),
     );
   },
-  putRequest(
+  put(
     url: string,
     queryParams: any | undefined,
     requestBody: any | undefined,
-    security: Security,
     configOverride?: AxiosRequestConfig,
-  ): Promise<SwaggerResponse<any>> {
+  ): Promise<VigoResponse<any>> {
     return cancellation((cancelToken) =>
-      getAxiosInstance(security).put(url, requestBody, {
+      getAxiosInstance().put(url, requestBody, {
         cancelToken,
         params: queryParams,
         ...configOverride,
       }),
     );
   },
-  patchRequest(
+  patch(
     url: string,
     queryParams: any | undefined,
     requestBody: any | undefined,
-    security: Security,
     configOverride?: AxiosRequestConfig,
-  ): Promise<SwaggerResponse<any>> {
+  ): Promise<VigoResponse<any>> {
     return cancellation((cancelToken) =>
-      getAxiosInstance(security).patch(url, requestBody, {
+      getAxiosInstance().patch(url, requestBody, {
         cancelToken,
         params: queryParams,
         ...configOverride,
       }),
     );
   },
-  deleteRequest(
+  delete(
     url: string,
     queryParams: any | undefined,
     requestBody: any | undefined,
-    security: Security,
     configOverride?: AxiosRequestConfig,
-  ): Promise<SwaggerResponse<any>> {
+  ): Promise<VigoResponse<any>> {
     return cancellation((cancelToken) =>
-      getAxiosInstance(security).delete(url, {
+      getAxiosInstance().delete(url, {
         data: requestBody,
         cancelToken,
         params: queryParams,

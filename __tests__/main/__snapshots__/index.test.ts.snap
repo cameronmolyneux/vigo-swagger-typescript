@@ -1,14 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`generate generate Code 1`] = `
-"
+"/* eslint-disable prettier/prettier */
+
 /**
 * AUTO_GENERATED Do not change this file directly, rerun the yarn vigo-swag-ts command*/
 
 import { AxiosRequestConfig } from \\"axios\\";
-import { SwaggerResponse } from \\"./config\\";
-import { Http } from \\"./httpRequest\\";
-import { DeleteByinvitationIdRemoveQueryParams, GetQueryParams, GetActiveQueryParams, GetByconnectionIdEpayQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetCommissionQueryParams, GetQueryParams, GetQueryParams, GetCountQueryParams, GetReportQueryParams, GetQrByaccountNumberQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetCommissionSumQueryParams, GetCommissionReportQueryParams, GetLinksCountQueryParams, GetLinksReportQueryParams, GetLinksPaidCountQueryParams, GetLinksPaidReportQueryParams, GetTransactionsCountQueryParams, GetTransactionsReportQueryParams, GetIntroducedCountQueryParams, GetIntroducedReportQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetAllQueryParams, GetQueryParams, GetQueryParams, GetCommissionQueryParams, GetQrcodeQueryParams, GetSettlementRequestComissionQueryParams, GetEpayRequestComissionQueryParams, GetQueryParams, GetTransferMoneyCommissionQueryParams, TotpLoginResult, RequestTotpInput, RegisterNewUserQuery, RegisterApiModel, VerifyPhoneNumberInput, SetUserBasicInfoInput, ForgetPasswordQuery, UserForgetPasswordInput, UserVerifyForgetPasswordInput, BankApiModel, BusinessCategoryApiModel, SubUserConnectionApiModel, SendConnectionRequestInput, EditConnectionInfoInput, SubUserPermissionApiModel, SetAccountAccessForSubUserInput, EditSubUserPermissionInput, SubUserActivityApiModel, EpayRequestApiModel, EpayRequestForUserQuery, EpayRequestDetailApiModel, ContactApiModel, CommissionAmountApiModel, UserMinimalDto, EpayRequestPublicInfoApiModel, WalletReceiptApiModel, EpayRequestPayInput, AggregationApiModel, ReportApiModel, EpayRequestTaskInput, FileApiModel, GroupTransferTargetValidationQuery, GroupTransferTargetValidationInput, GroupTransferQuery, GroupTransferInput, DriverInfoResult, TaxiRecieptApiDto, ClientPurchaseInput, KpiResult, MachineSignUp, FullRegisterApiModel, ImportantActionApiModel, NotificationApiModel, UnreadNotificationCountApiModel, PluginApiModel, PosLandingPageApiModel, PosWalletPayInput, PosOnlinePayInput, BankReceiptApiModel, ResellerApiModel, ReselledUserFilterData, ReselledUserApiModel, ReselledUserActivityApiModel, DateReportApiModelOfDecimal, DateReportApiModelOfInteger, EpayRequestWcfResult, EpayRequestServiceInput, EpayRequestCheckStatusResult, DivideEpayRequestServiceInput, DividedEpayRequestUnblockResult, DividedEpayRequestUnblockInput, DividedEpayRequestCancelResult, DividedEpayRequestCancelInput, InitApiModel, SettingApiModel, TerminalVersionApiModel, SubDomainApiModel, SubDomainUpdateApiModel, BusinessUserConnectionApiModel, SubUserAccountDetailQuery, TransactionApiModel, AllTransactionsReportApiModel, AccountInfoApiModel, TransferMoneyApiModel, UserBankApiModel, UserBankDetailApiModel, UserBankChangeVisibilityInput, UserDetailQuery, UserMeQuery, UserProfileInput, UserProfileAvatarInput, UserChangePasswordInput, UserWorkspaceQuery, UserIdentityRequestQuery, NewUserIdentityRequestInput, UpgradeToBusinessApiModel, UpgradeToBusinessUserInput, SubUserInvitationApiModel, SubuserInvitationTaskInput, UserPluginDetailApiModel, UserPluginApiModel, UserPluginTogggleApiModel, WalletDisplayApiModel, WalletDetailApiModel, AccountSettingNotificationStatusApiModel, AccountBalanceApiModel, AccountPermittedSubUserQuery, NewChargeRequestResultQuery, NewChargeRequestInput, RequestBodyTransferMoneyInput, RequestBodyNewEpayRequestInput, RequestBodyFile_Upload, RequestBodyLogEventLevel, RequestBodySubUserNotificationStatusInput, RequestBodyUserBankInput, RequestBodyAccountCreationApiModel,}  from \\"./types\\"
+import { VigoResponse } from \\"../config\\";
+import { Http } from \\"../httpRequest\\";
+import { ServiceLocation } from '../../../utils/serviceLocationsAxios';
+import { DeleteByinvitationIdRemoveQueryParams, GetQueryParams, GetActiveQueryParams, GetByconnectionIdEpayQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetCommissionQueryParams, GetQueryParams, GetQueryParams, GetCountQueryParams, GetReportQueryParams, GetQrByaccountNumberQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetCommissionSumQueryParams, GetCommissionReportQueryParams, GetLinksCountQueryParams, GetLinksReportQueryParams, GetLinksPaidCountQueryParams, GetLinksPaidReportQueryParams, GetTransactionsCountQueryParams, GetTransactionsReportQueryParams, GetIntroducedCountQueryParams, GetIntroducedReportQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetAllQueryParams, GetQueryParams, GetQueryParams, GetCommissionQueryParams, GetQrcodeQueryParams, GetSettlementRequestComissionQueryParams, GetEpayRequestComissionQueryParams, GetQueryParams, GetTransferMoneyCommissionQueryParams, TotpLoginResult, RequestTotpInput, RegisterNewUserQuery, RegisterApiModel, VerifyPhoneNumberInput, SetUserBasicInfoInput, ForgetPasswordQuery, UserForgetPasswordInput, UserVerifyForgetPasswordInput, BankApiModel, BusinessCategoryApiModel, SubUserConnectionApiModel, SendConnectionRequestInput, EditConnectionInfoInput, SubUserPermissionApiModel, SetAccountAccessForSubUserInput, EditSubUserPermissionInput, SubUserActivityApiModel, EpayRequestApiModel, EpayRequestForUserQuery, EpayRequestDetailApiModel, ContactApiModel, CommissionAmountApiModel, UserMinimalDto, EpayRequestPublicInfoApiModel, WalletReceiptApiModel, EpayRequestPayInput, AggregationApiModel, ReportApiModel, EpayRequestTaskInput, FileApiModel, GroupTransferTargetValidationQuery, GroupTransferTargetValidationInput, GroupTransferQuery, GroupTransferInput, DriverInfoResult, TaxiRecieptApiDto, ClientPurchaseInput, KpiResult, MachineSignUp, FullRegisterApiModel, ImportantActionApiModel, NotificationApiModel, UnreadNotificationCountApiModel, PluginApiModel, PosLandingPageApiModel, PosWalletPayInput, PosOnlinePayInput, BankReceiptApiModel, ResellerApiModel, ReselledUserFilterData, ReselledUserApiModel, ReselledUserActivityApiModel, DateReportApiModelOfDecimal, DateReportApiModelOfInteger, EpayRequestWcfResult, EpayRequestServiceInput, EpayRequestCheckStatusResult, DivideEpayRequestServiceInput, DividedEpayRequestUnblockResult, DividedEpayRequestUnblockInput, DividedEpayRequestCancelResult, DividedEpayRequestCancelInput, InitApiModel, SettingApiModel, TerminalVersionApiModel, SubDomainApiModel, SubDomainUpdateApiModel, BusinessUserConnectionApiModel, SubUserAccountDetailQuery, TransactionApiModel, AllTransactionsReportApiModel, AccountInfoApiModel, TransferMoneyApiModel, UserBankApiModel, UserBankDetailApiModel, UserBankChangeVisibilityInput, UserDetailQuery, UserMeQuery, UserProfileInput, UserProfileAvatarInput, UserChangePasswordInput, UserWorkspaceQuery, UserIdentityRequestQuery, NewUserIdentityRequestInput, UpgradeToBusinessApiModel, UpgradeToBusinessUserInput, SubUserInvitationApiModel, SubuserInvitationTaskInput, UserPluginDetailApiModel, UserPluginApiModel, UserPluginTogggleApiModel, WalletDisplayApiModel, WalletDetailApiModel, AccountSettingNotificationStatusApiModel, AccountBalanceApiModel, AccountPermittedSubUserQuery, NewChargeRequestResultQuery, NewChargeRequestInput, RequestBodyTransferMoneyInput, RequestBodyNewEpayRequestInput, RequestBodyFile_Upload, RequestBodyLogEventLevel, RequestBodySubUserNotificationStatusInput, RequestBodyUserBankInput, RequestBodyAccountCreationApiModel,}  from \\"../../../undefined/\\"
 
 
 /**
@@ -24,21 +26,14 @@ export const deleteByconnectionId = (
  * Connection Id
  */
 connectionId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (SubUserConnectionApiModel)>> => {
   
-  return Http.delete(
-    template(deleteByconnectionId.key,{connectionId,}),
+  return Http.delete(ServiceLocation. + '/BusinessUser/connection/{connectionId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-deleteByconnectionId.key = \\"/BusinessUser/connection/{connectionId}\\";
 
 
 /**
@@ -56,7 +51,7 @@ export const deleteByconnectionId = (
  * connection id
  */
 connectionId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (BusinessUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (BusinessUserConnectionApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -64,19 +59,12 @@ connectionId: number,configOverride?:AxiosRequestConfig
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.delete(
-    template(deleteByconnectionId.key,{connectionId,}),
+  return Http.delete(ServiceLocation. + '/SubUser/connection/{connectionId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-deleteByconnectionId.key = \\"/SubUser/connection/{connectionId}\\";
 
 
 /**
@@ -92,21 +80,14 @@ export const deleteByconnectionId = (
  * connection id
  */
 connectionId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (BusinessUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (BusinessUserConnectionApiModel)>> => {
   
-  return Http.delete(
-    template(deleteByconnectionId.key,{connectionId,}),
+  return Http.delete(ServiceLocation. + '/User/connection/{connectionId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-deleteByconnectionId.key = \\"/User/connection/{connectionId}\\";
 
 export const deleteByconnectionIdPermissionByuserWalletId = (
     connectionId: number,
@@ -115,21 +96,14 @@ export const deleteByconnectionIdPermissionByuserWalletId = (
  * Id of Account to delete it's permissios
  */
 userWalletId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.delete(
-    template(deleteByconnectionIdPermissionByuserWalletId.key,{connectionId,userWalletId,}),
+  return Http.delete(ServiceLocation. + '/BusinessUser/connection/{connectionId}/permission/{userWalletId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-deleteByconnectionIdPermissionByuserWalletId.key = \\"/BusinessUser/connection/{connectionId}/permission/{userWalletId}\\";
 
 
 /**
@@ -140,21 +114,14 @@ deleteByconnectionIdPermissionByuserWalletId.key = \\"/BusinessUser/connection/{
  */
 export const deleteByinvitationIdRemove = (
     invitationId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (SubUserConnectionApiModel)>> => {
   
-  return Http.delete(
-    template(deleteByinvitationIdRemove.key,{invitationId,}),
+  return Http.delete(ServiceLocation. + '/BusinessUser/invite/{invitationId}/remove',
     undefined,
     undefined,
-    _CONSTANT5,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-deleteByinvitationIdRemove.key = \\"/BusinessUser/invite/{invitationId}/remove\\";
 
 
 /**
@@ -167,7 +134,7 @@ deleteByinvitationIdRemove.key = \\"/BusinessUser/invite/{invitationId}/remove\\
  */
 export const deleteByinvitationIdRemove = (
     invitationId: string,queryParams: DeleteByinvitationIdRemoveQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (SubUserConnectionApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -175,19 +142,12 @@ export const deleteByinvitationIdRemove = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.delete(
-    template(deleteByinvitationIdRemove.key,{invitationId,}),
+  return Http.delete(ServiceLocation. + '/BusinessUser/connection/{invitationId}/remove',
     queryParams,
     undefined,
-    _CONSTANT5,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-deleteByinvitationIdRemove.key = \\"/BusinessUser/connection/{invitationId}/remove\\";
 
 
 /**
@@ -196,21 +156,14 @@ deleteByinvitationIdRemove.key = \\"/BusinessUser/connection/{invitationId}/remo
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<BankApiModel[]>> => {
+): Promise<VigoResponse<BankApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Bank',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Bank\\";
 
 
 /**
@@ -219,21 +172,14 @@ get.key = \\"/Bank\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<BusinessCategoryApiModel[]>> => {
+): Promise<VigoResponse<BusinessCategoryApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/BusinessUser/category',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/BusinessUser/category\\";
 
 
 /**
@@ -243,57 +189,36 @@ get.key = \\"/BusinessUser/category\\";
  */
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<SubUserConnectionApiModel[]>> => {
+): Promise<VigoResponse<SubUserConnectionApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/BusinessUser/connection',
     queryParams,
     undefined,
-    _CONSTANT5,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/BusinessUser/connection\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<EpayRequestApiModel[]>> => {
+): Promise<VigoResponse<EpayRequestApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/EpayRequest',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/EpayRequest\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/EpayRequest/excel',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/EpayRequest/excel\\";
 
 
 /**
@@ -304,21 +229,14 @@ get.key = \\"/EpayRequest/excel\\";
  */
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<EpayRequestForUserQuery[]>> => {
+): Promise<VigoResponse<EpayRequestForUserQuery[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/EpayRequest/forMe',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/EpayRequest/forMe\\";
 
 
 /**
@@ -332,93 +250,58 @@ export const get = (
  * EpayRequest's Id
  */
 epayId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (EpayRequestDetailApiModel)>> => {
+): Promise<VigoResponse< & (EpayRequestDetailApiModel)>> => {
   
-  return Http.get(
-    template(get.key,{epayId,}),
+  return Http.get(ServiceLocation. + '/EpayRequest/{epayId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/EpayRequest/{epayId}\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AggregationApiModel)>> => {
+): Promise<VigoResponse< & (AggregationApiModel)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/EpayRequest/count',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/EpayRequest/count\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<ReportApiModel[]>> => {
+): Promise<VigoResponse<ReportApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/EpayRequest/report',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/EpayRequest/report\\";
 
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/error',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/error\\";
 
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/error/local',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/error/local\\";
 
 
 /**
@@ -432,39 +315,25 @@ export const get = (
  * file unique id
  */
 fileGuid: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.get(
-    template(get.key,{fileGuid,}),
+  return Http.get(ServiceLocation. + '/File/{fileGuid}',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/File/{fileGuid}\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (CommissionAmountApiModel)>> => {
+): Promise<VigoResponse< & (CommissionAmountApiModel)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/GroupTransfer/commission',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/GroupTransfer/commission\\";
 
 
 /**
@@ -473,75 +342,47 @@ get.key = \\"/GroupTransfer/commission\\";
  */
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (DriverInfoResult)>> => {
+): Promise<VigoResponse< & (DriverInfoResult)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Integration',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT8,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Integration\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<KpiResult[]>> => {
+): Promise<VigoResponse<KpiResult[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Kpi/Last',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Kpi/Last\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<KpiResult[]>> => {
+): Promise<VigoResponse<KpiResult[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Kpi/Current',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Kpi/Current\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<KpiResult[]>> => {
+): Promise<VigoResponse<KpiResult[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Kpi',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Kpi\\";
 
 
 /**
@@ -550,21 +391,14 @@ get.key = \\"/Kpi\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<ImportantActionApiModel[]>> => {
+): Promise<VigoResponse<ImportantActionApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Notification/ia',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Notification/ia\\";
 
 
 /**
@@ -574,57 +408,36 @@ Maximum 99 items will be returned.
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<NotificationApiModel[]>> => {
+): Promise<VigoResponse<NotificationApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Notification/notif',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Notification/notif\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<UnreadNotificationCountApiModel[]>> => {
+): Promise<VigoResponse<UnreadNotificationCountApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Notification/unread',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Notification/unread\\";
 
 export const get = (
     pluginId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (PluginApiModel)>> => {
+): Promise<VigoResponse< & (PluginApiModel)>> => {
   
-  return Http.get(
-    template(get.key,{pluginId,}),
+  return Http.get(ServiceLocation. + '/Plugin/{pluginId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Plugin/{pluginId}\\";
 
 
 /**
@@ -638,21 +451,14 @@ export const get = (
  * Account Number
  */
 accountNumber: string,queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (PosLandingPageApiModel)>> => {
+): Promise<VigoResponse< & (PosLandingPageApiModel)>> => {
   
-  return Http.get(
-    template(get.key,{accountNumber,}),
+  return Http.get(ServiceLocation. + '/Pos/{accountNumber}',
     queryParams,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Pos/{accountNumber}\\";
 
 
 /**
@@ -669,7 +475,7 @@ export const get = (
  * EpayRequest's token to get receipt for
  */
 epayToken: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (BankReceiptApiModel)>> => {
+): Promise<VigoResponse< & (BankReceiptApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -677,19 +483,12 @@ epayToken: string,configOverride?:AxiosRequestConfig
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    template(get.key,{epayToken,}),
+  return Http.get(ServiceLocation. + '/Receipt/{epayToken}',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Receipt/{epayToken}\\";
 
 
 /**
@@ -699,21 +498,14 @@ get.key = \\"/Receipt/{epayToken}\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (ResellerApiModel)>> => {
+): Promise<VigoResponse< & (ResellerApiModel)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/ResellerUser',
     undefined,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/ResellerUser\\";
 
 
 /**
@@ -723,21 +515,14 @@ get.key = \\"/ResellerUser\\";
  */
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<ReselledUserApiModel[]>> => {
+): Promise<VigoResponse<ReselledUserApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/introduced',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/ResellerUser/introduced\\";
 
 
 /**
@@ -751,32 +536,15 @@ export const get = (
  * The SubDomain part of the url.
             
  */
-subDomainAddress: string,headerParams: {
-/**
- * 
- * - Format: guid
- */
-\\"clientId\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubDomainApiModel)>> => {
+subDomainAddress: string,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (SubDomainApiModel)>> => {
   
-  return Http.get(
-    template(get.key,{subDomainAddress,}),
+  return Http.get(ServiceLocation. + '/SubDomain/{subDomainAddress}',
     undefined,
     undefined,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT14,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/SubDomain/{subDomainAddress}\\";
 
 
 /**
@@ -786,21 +554,14 @@ get.key = \\"/SubDomain/{subDomainAddress}\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubDomainApiModel)>> => {
+): Promise<VigoResponse< & (SubDomainApiModel)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/SubDomain',
     undefined,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT8,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/SubDomain\\";
 
 
 /**
@@ -812,7 +573,7 @@ get.key = \\"/SubDomain\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<BusinessUserConnectionApiModel[]>> => {
+): Promise<VigoResponse<BusinessUserConnectionApiModel[]>> => {
   
   if (__DEV__) {
     console.warn(
@@ -820,55 +581,34 @@ export const get = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/SubUser/connection',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/SubUser/connection\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<TransactionApiModel[]>> => {
+): Promise<VigoResponse<TransactionApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Transaction',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Transaction\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Transaction/excel',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Transaction/excel\\";
 
 
 /**
@@ -878,21 +618,14 @@ get.key = \\"/Transaction/excel\\";
  */
 export const get = (
     transactionId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (TransactionApiModel)>> => {
+): Promise<VigoResponse< & (TransactionApiModel)>> => {
   
-  return Http.get(
-    template(get.key,{transactionId,}),
+  return Http.get(ServiceLocation. + '/Transaction/{transactionId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Transaction/{transactionId}\\";
 
 
 /**
@@ -900,7 +633,7 @@ get.key = \\"/Transaction/{transactionId}\\";
  */
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<ReportApiModel[]>> => {
+): Promise<VigoResponse<ReportApiModel[]>> => {
   
   if (__DEV__) {
     console.warn(
@@ -908,37 +641,23 @@ export const get = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Transaction/report',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Transaction/report\\";
 
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AccountInfoApiModel)>> => {
+): Promise<VigoResponse< & (AccountInfoApiModel)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Transfer/search',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Transfer/search\\";
 
 
 /**
@@ -947,21 +666,14 @@ get.key = \\"/Transfer/search\\";
  */
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<TransferMoneyApiModel[]>> => {
+): Promise<VigoResponse<TransferMoneyApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/Transfer/recent',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/Transfer/recent\\";
 
 
 /**
@@ -971,21 +683,14 @@ get.key = \\"/Transfer/recent\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<UserBankApiModel[]>> => {
+): Promise<VigoResponse<UserBankApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/UserBank',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/UserBank\\";
 
 
 /**
@@ -995,21 +700,14 @@ get.key = \\"/UserBank\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<UserBankApiModel[]>> => {
+): Promise<VigoResponse<UserBankApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/UserBank/ready',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/UserBank/ready\\";
 
 
 /**
@@ -1024,21 +722,14 @@ export const get = (
  * User bank id
  */
 userBankId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserBankDetailApiModel)>> => {
+): Promise<VigoResponse< & (UserBankDetailApiModel)>> => {
   
-  return Http.get(
-    template(get.key,{userBankId,}),
+  return Http.get(ServiceLocation. + '/UserBank/{userBankId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/UserBank/{userBankId}\\";
 
 
 /**
@@ -1047,21 +738,14 @@ get.key = \\"/UserBank/{userBankId}\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserDetailQuery)>> => {
+): Promise<VigoResponse< & (UserDetailQuery)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/User',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/User\\";
 
 
 /**
@@ -1070,21 +754,14 @@ get.key = \\"/User\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserMeQuery)>> => {
+): Promise<VigoResponse< & (UserMeQuery)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/User/me',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/User/me\\";
 
 
 /**
@@ -1093,21 +770,14 @@ get.key = \\"/User/me\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<UserWorkspaceQuery[]>> => {
+): Promise<VigoResponse<UserWorkspaceQuery[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/User/workspace',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/User/workspace\\";
 
 
 /**
@@ -1116,21 +786,14 @@ get.key = \\"/User/workspace\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserIdentityRequestQuery)>> => {
+): Promise<VigoResponse< & (UserIdentityRequestQuery)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/User/identityRequest',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/User/identityRequest\\";
 
 
 /**
@@ -1139,21 +802,14 @@ get.key = \\"/User/identityRequest\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UpgradeToBusinessApiModel)>> => {
+): Promise<VigoResponse< & (UpgradeToBusinessApiModel)>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/User/upgradeToBusinessRequest',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/User/upgradeToBusinessRequest\\";
 
 
 /**
@@ -1162,21 +818,14 @@ get.key = \\"/User/upgradeToBusinessRequest\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<SubUserInvitationApiModel[]>> => {
+): Promise<VigoResponse<SubUserInvitationApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/User/invitation',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/User/invitation\\";
 
 
 /**
@@ -1185,75 +834,47 @@ get.key = \\"/User/invitation\\";
  */
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<BusinessUserConnectionApiModel[]>> => {
+): Promise<VigoResponse<BusinessUserConnectionApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/User/connection',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/User/connection\\";
 
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<UserPluginDetailApiModel[]>> => {
+): Promise<VigoResponse<UserPluginDetailApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/UserPlugin',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/UserPlugin\\";
 
 export const get = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<WalletDisplayApiModel[]>> => {
+): Promise<VigoResponse<WalletDisplayApiModel[]>> => {
   
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/UserWallet',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/UserWallet\\";
 
 export const get = (
     userWalletId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (WalletDetailApiModel)>> => {
+): Promise<VigoResponse< & (WalletDetailApiModel)>> => {
   
-  return Http.get(
-    template(get.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/UserWallet/{userWalletId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/UserWallet/{userWalletId}\\";
 
 
 /**
@@ -1261,7 +882,7 @@ get.key = \\"/UserWallet/{userWalletId}\\";
  */
 export const get = (
     queryParams: GetQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AccountInfoApiModel)>> => {
+): Promise<VigoResponse< & (AccountInfoApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1269,19 +890,12 @@ export const get = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    get.key,
+  return Http.get(ServiceLocation. + '/UserWallet/search',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-get.key = \\"/UserWallet/search\\";
 
 
 /**
@@ -1291,21 +905,14 @@ get.key = \\"/UserWallet/search\\";
  */
 export const getActive = (
     queryParams: GetActiveQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<SubUserConnectionApiModel[]>> => {
+): Promise<VigoResponse<SubUserConnectionApiModel[]>> => {
   
-  return Http.get(
-    getActive.key,
+  return Http.get(ServiceLocation. + '/BusinessUser/connection/active',
     queryParams,
     undefined,
-    _CONSTANT5,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getActive.key = \\"/BusinessUser/connection/active\\";
 
 
 /**
@@ -1313,7 +920,7 @@ getActive.key = \\"/BusinessUser/connection/active\\";
  */
 export const getAll = (
     queryParams: GetAllQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AllTransactionsReportApiModel)>> => {
+): Promise<VigoResponse< & (AllTransactionsReportApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1321,19 +928,12 @@ export const getAll = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getAll.key,
+  return Http.get(ServiceLocation. + '/Transaction/report/all',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getAll.key = \\"/Transaction/report/all\\";
 
 
 /**
@@ -1342,39 +942,25 @@ getAll.key = \\"/Transaction/report/all\\";
  */
 export const getBalance = (
     userWalletId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AccountBalanceApiModel)>> => {
+): Promise<VigoResponse< & (AccountBalanceApiModel)>> => {
   
-  return Http.get(
-    template(getBalance.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/UserWallet/{userWalletId}/balance',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getBalance.key = \\"/UserWallet/{userWalletId}/balance\\";
 
 export const getBycode = (
     code: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.get(
-    template(getBycode.key,{code,}),
+  return Http.get(ServiceLocation. + '/error/status/{code}',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getBycode.key = \\"/error/status/{code}\\";
 
 
 /**
@@ -1390,21 +976,14 @@ export const getByconnectionId = (
  * Connection Id
  */
 connectionId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (SubUserConnectionApiModel)>> => {
   
-  return Http.get(
-    template(getByconnectionId.key,{connectionId,}),
+  return Http.get(ServiceLocation. + '/BusinessUser/connection/{connectionId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByconnectionId.key = \\"/BusinessUser/connection/{connectionId}\\";
 
 
 /**
@@ -1420,39 +999,25 @@ export const getByconnectionIdActivity = (
  * Connection Id
  */
 connectionId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserActivityApiModel)>> => {
+): Promise<VigoResponse< & (SubUserActivityApiModel)>> => {
   
-  return Http.get(
-    template(getByconnectionIdActivity.key,{connectionId,}),
+  return Http.get(ServiceLocation. + '/BusinessUser/connection/{connectionId}/activity',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByconnectionIdActivity.key = \\"/BusinessUser/connection/{connectionId}/activity\\";
 
 export const getByconnectionIdEpay = (
     connectionId: number,queryParams: GetByconnectionIdEpayQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<EpayRequestApiModel[]>> => {
+): Promise<VigoResponse<EpayRequestApiModel[]>> => {
   
-  return Http.get(
-    template(getByconnectionIdEpay.key,{connectionId,}),
+  return Http.get(ServiceLocation. + '/BusinessUser/connection/{connectionId}/epay',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByconnectionIdEpay.key = \\"/BusinessUser/connection/{connectionId}/epay\\";
 
 
 /**
@@ -1468,21 +1033,14 @@ export const getByconnectionIdPermission = (
  * Connection Id
  */
 connectionId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<SubUserPermissionApiModel[]>> => {
+): Promise<VigoResponse<SubUserPermissionApiModel[]>> => {
   
-  return Http.get(
-    template(getByconnectionIdPermission.key,{connectionId,}),
+  return Http.get(ServiceLocation. + '/BusinessUser/connection/{connectionId}/permission',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByconnectionIdPermission.key = \\"/BusinessUser/connection/{connectionId}/permission\\";
 
 
 /**
@@ -1497,21 +1055,14 @@ export const getByepayToken = (
  * EpayRequest's token to get receipt for
  */
 epayToken: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (WalletReceiptApiModel)>> => {
+): Promise<VigoResponse< & (WalletReceiptApiModel)>> => {
   
-  return Http.get(
-    template(getByepayToken.key,{epayToken,}),
+  return Http.get(ServiceLocation. + '/Receipt/wallet/{epayToken}',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByepayToken.key = \\"/Receipt/wallet/{epayToken}\\";
 
 
 /**
@@ -1526,39 +1077,25 @@ export const getByepayTryId = (
  * EpayTry's id to get receipt for
  */
 epayTryId: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (BankReceiptApiModel)>> => {
+): Promise<VigoResponse< & (BankReceiptApiModel)>> => {
   
-  return Http.get(
-    template(getByepayTryId.key,{epayTryId,}),
+  return Http.get(ServiceLocation. + '/Receipt/bank/{epayTryId}',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByepayTryId.key = \\"/Receipt/bank/{epayTryId}\\";
 
 export const getByinput = (
     input: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (ContactApiModel)>> => {
+): Promise<VigoResponse< & (ContactApiModel)>> => {
   
-  return Http.get(
-    template(getByinput.key,{input,}),
+  return Http.get(ServiceLocation. + '/User/contact/{input}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByinput.key = \\"/User/contact/{input}\\";
 
 
 /**
@@ -1567,39 +1104,25 @@ getByinput.key = \\"/User/contact/{input}\\";
  */
 export const getByinvitationToken = (
     invitationToken: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserInvitationApiModel)>> => {
+): Promise<VigoResponse< & (SubUserInvitationApiModel)>> => {
   
-  return Http.get(
-    template(getByinvitationToken.key,{invitationToken,}),
+  return Http.get(ServiceLocation. + '/User/invitation/{invitationToken}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByinvitationToken.key = \\"/User/invitation/{invitationToken}\\";
 
 export const getBylogicalAction = (
     userWalletId: number,logicalAction: \\"EpayRequest\\" | \\"TransferMoney\\" | \\"AccountChargeRequest\\" | \\"ServiceBill\\" | \\"ServiceMobileCharge\\" | \\"POS\\" | \\"ShareAndBlockRequest\\" | \\"ShareRequest\\" | \\"Settlement\\" | \\"GroupTransferMoney\\" | \\"ShareAndUnblock\\" | \\"Refund\\" | \\"PayCommand\\" | \\"Gift\\" | \\"TaxiFairPayment\\" | \\"HitoBitFee\\",configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<boolean>> => {
+): Promise<VigoResponse<boolean>> => {
   
-  return Http.get(
-    template(getBylogicalAction.key,{userWalletId,logicalAction,}),
+  return Http.get(ServiceLocation. + '/Access/{userWalletId}/{logicalAction}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getBylogicalAction.key = \\"/Access/{userWalletId}/{logicalAction}\\";
 
 
 /**
@@ -1609,21 +1132,14 @@ getBylogicalAction.key = \\"/Access/{userWalletId}/{logicalAction}\\";
  */
 export const getByuserIdActivity = (
     userId: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (ReselledUserActivityApiModel)>> => {
+): Promise<VigoResponse< & (ReselledUserActivityApiModel)>> => {
   
-  return Http.get(
-    template(getByuserIdActivity.key,{userId,}),
+  return Http.get(ServiceLocation. + '/ResellerUser/introduced/{userId}/activity',
     undefined,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByuserIdActivity.key = \\"/ResellerUser/introduced/{userId}/activity\\";
 
 
 /**
@@ -1633,21 +1149,14 @@ getByuserIdActivity.key = \\"/ResellerUser/introduced/{userId}/activity\\";
  */
 export const getByuserWalletId = (
     userWalletId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserAccountDetailQuery)>> => {
+): Promise<VigoResponse< & (SubUserAccountDetailQuery)>> => {
   
-  return Http.get(
-    template(getByuserWalletId.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/SubUser/account/{userWalletId}',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getByuserWalletId.key = \\"/SubUser/account/{userWalletId}\\";
 
 
 /**
@@ -1656,21 +1165,14 @@ getByuserWalletId.key = \\"/SubUser/account/{userWalletId}\\";
  */
 export const getCommission = (
     userWalletId: number,queryParams: GetCommissionQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (CommissionAmountApiModel)>> => {
+): Promise<VigoResponse< & (CommissionAmountApiModel)>> => {
   
-  return Http.get(
-    template(getCommission.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/EpayRequest/{userWalletId}/commission',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getCommission.key = \\"/EpayRequest/{userWalletId}/commission\\";
 
 
 /**
@@ -1679,21 +1181,14 @@ getCommission.key = \\"/EpayRequest/{userWalletId}/commission\\";
  */
 export const getCommission = (
     userWalletId: number,queryParams: GetCommissionQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (CommissionAmountApiModel)>> => {
+): Promise<VigoResponse< & (CommissionAmountApiModel)>> => {
   
-  return Http.get(
-    template(getCommission.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/Transfer/{userWalletId}/commission',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getCommission.key = \\"/Transfer/{userWalletId}/commission\\";
 
 
 /**
@@ -1704,7 +1199,7 @@ getCommission.key = \\"/Transfer/{userWalletId}/commission\\";
  */
 export const getCommissionReport = (
     queryParams: GetCommissionReportQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<DateReportApiModelOfDecimal[]>> => {
+): Promise<VigoResponse<DateReportApiModelOfDecimal[]>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1712,19 +1207,12 @@ export const getCommissionReport = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getCommissionReport.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/commission/report',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getCommissionReport.key = \\"/ResellerUser/dashboard/commission/report\\";
 
 
 /**
@@ -1735,7 +1223,7 @@ getCommissionReport.key = \\"/ResellerUser/dashboard/commission/report\\";
  */
 export const getCommissionSum = (
     queryParams: GetCommissionSumQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AggregationApiModel)>> => {
+): Promise<VigoResponse< & (AggregationApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1743,73 +1231,45 @@ export const getCommissionSum = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getCommissionSum.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/commission/sum',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getCommissionSum.key = \\"/ResellerUser/dashboard/commission/sum\\";
 
 export const getCount = (
     queryParams: GetCountQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AggregationApiModel)>> => {
+): Promise<VigoResponse< & (AggregationApiModel)>> => {
   
-  return Http.get(
-    getCount.key,
+  return Http.get(ServiceLocation. + '/EpayRequest/forMe/count',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getCount.key = \\"/EpayRequest/forMe/count\\";
 
 export const getCreators = (
     userWalletId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<UserMinimalDto[]>> => {
+): Promise<VigoResponse<UserMinimalDto[]>> => {
   
-  return Http.get(
-    template(getCreators.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/EpayRequest/{userWalletId}/creators',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getCreators.key = \\"/EpayRequest/{userWalletId}/creators\\";
 
 export const getDetail = (
     epayToken: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (EpayRequestPublicInfoApiModel)>> => {
+): Promise<VigoResponse< & (EpayRequestPublicInfoApiModel)>> => {
   
-  return Http.get(
-    template(getDetail.key,{epayToken,}),
+  return Http.get(ServiceLocation. + '/EpayRequest/{epayToken}/detail',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getDetail.key = \\"/EpayRequest/{epayToken}/detail\\";
 
 
 /**
@@ -1817,7 +1277,7 @@ getDetail.key = \\"/EpayRequest/{epayToken}/detail\\";
  */
 export const getEpayRequestComission = (
     userWalletId: number,queryParams: GetEpayRequestComissionQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (CommissionAmountApiModel)>> => {
+): Promise<VigoResponse< & (CommissionAmountApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1825,19 +1285,12 @@ export const getEpayRequestComission = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    template(getEpayRequestComission.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/UserWallet/{userWalletId}/epayRequest/comission',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getEpayRequestComission.key = \\"/UserWallet/{userWalletId}/epayRequest/comission\\";
 
 
 /**
@@ -1847,21 +1300,14 @@ getEpayRequestComission.key = \\"/UserWallet/{userWalletId}/epayRequest/comissio
  */
 export const getFilterData = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (ReselledUserFilterData)>> => {
+): Promise<VigoResponse< & (ReselledUserFilterData)>> => {
   
-  return Http.get(
-    getFilterData.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/introduced/filterData',
     undefined,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getFilterData.key = \\"/ResellerUser/introduced/filterData\\";
 
 
 /**
@@ -1872,7 +1318,7 @@ getFilterData.key = \\"/ResellerUser/introduced/filterData\\";
  */
 export const getIntroducedCount = (
     queryParams: GetIntroducedCountQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AggregationApiModel)>> => {
+): Promise<VigoResponse< & (AggregationApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1880,19 +1326,12 @@ export const getIntroducedCount = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getIntroducedCount.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/introduced/count',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getIntroducedCount.key = \\"/ResellerUser/dashboard/introduced/count\\";
 
 
 /**
@@ -1903,7 +1342,7 @@ getIntroducedCount.key = \\"/ResellerUser/dashboard/introduced/count\\";
  */
 export const getIntroducedReport = (
     queryParams: GetIntroducedReportQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<DateReportApiModelOfInteger[]>> => {
+): Promise<VigoResponse<DateReportApiModelOfInteger[]>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1911,19 +1350,12 @@ export const getIntroducedReport = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getIntroducedReport.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/introduced/report',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getIntroducedReport.key = \\"/ResellerUser/dashboard/introduced/report\\";
 
 
 /**
@@ -1934,7 +1366,7 @@ getIntroducedReport.key = \\"/ResellerUser/dashboard/introduced/report\\";
  */
 export const getLinksCount = (
     queryParams: GetLinksCountQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AggregationApiModel)>> => {
+): Promise<VigoResponse< & (AggregationApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1942,19 +1374,12 @@ export const getLinksCount = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getLinksCount.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/links/count',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getLinksCount.key = \\"/ResellerUser/dashboard/links/count\\";
 
 
 /**
@@ -1965,7 +1390,7 @@ getLinksCount.key = \\"/ResellerUser/dashboard/links/count\\";
  */
 export const getLinksPaidCount = (
     queryParams: GetLinksPaidCountQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AggregationApiModel)>> => {
+): Promise<VigoResponse< & (AggregationApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -1973,19 +1398,12 @@ export const getLinksPaidCount = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getLinksPaidCount.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/links/paid/count',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getLinksPaidCount.key = \\"/ResellerUser/dashboard/links/paid/count\\";
 
 
 /**
@@ -1996,7 +1414,7 @@ getLinksPaidCount.key = \\"/ResellerUser/dashboard/links/paid/count\\";
  */
 export const getLinksPaidReport = (
     queryParams: GetLinksPaidReportQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<DateReportApiModelOfInteger[]>> => {
+): Promise<VigoResponse<DateReportApiModelOfInteger[]>> => {
   
   if (__DEV__) {
     console.warn(
@@ -2004,19 +1422,12 @@ export const getLinksPaidReport = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getLinksPaidReport.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/links/paid/report',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getLinksPaidReport.key = \\"/ResellerUser/dashboard/links/paid/report\\";
 
 
 /**
@@ -2027,7 +1438,7 @@ getLinksPaidReport.key = \\"/ResellerUser/dashboard/links/paid/report\\";
  */
 export const getLinksReport = (
     queryParams: GetLinksReportQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<DateReportApiModelOfInteger[]>> => {
+): Promise<VigoResponse<DateReportApiModelOfInteger[]>> => {
   
   if (__DEV__) {
     console.warn(
@@ -2035,37 +1446,23 @@ export const getLinksReport = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getLinksReport.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/links/report',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getLinksReport.key = \\"/ResellerUser/dashboard/links/report\\";
 
 export const getPermittedsubusers = (
     userWalletId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<AccountPermittedSubUserQuery[]>> => {
+): Promise<VigoResponse<AccountPermittedSubUserQuery[]>> => {
   
-  return Http.get(
-    template(getPermittedsubusers.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/UserWallet/{userWalletId}/permittedsubusers',
     undefined,
     undefined,
-    _CONSTANT5,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getPermittedsubusers.key = \\"/UserWallet/{userWalletId}/permittedsubusers\\";
 
 
 /**
@@ -2075,7 +1472,7 @@ getPermittedsubusers.key = \\"/UserWallet/{userWalletId}/permittedsubusers\\";
  */
 export const getQrByaccountNumber = (
     accountNumber: string,queryParams: GetQrByaccountNumberQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
   if (__DEV__) {
     console.warn(
@@ -2083,19 +1480,12 @@ export const getQrByaccountNumber = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    template(getQrByaccountNumber.key,{accountNumber,}),
+  return Http.get(ServiceLocation. + '/EpayRequest/pos/Qr/{accountNumber}',
     queryParams,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getQrByaccountNumber.key = \\"/EpayRequest/pos/Qr/{accountNumber}\\";
 
 
 /**
@@ -2109,93 +1499,58 @@ export const getQrcode = (
  * epay request token
  */
 epayToken: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.get(
-    template(getQrcode.key,{epayToken,}),
+  return Http.get(ServiceLocation. + '/EpayRequest/{epayToken}/qrcode',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getQrcode.key = \\"/EpayRequest/{epayToken}/qrcode\\";
 
 export const getQrcode = (
     accountNumber: string,queryParams: GetQrcodeQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.get(
-    template(getQrcode.key,{accountNumber,}),
+  return Http.get(ServiceLocation. + '/UserWallet/{accountNumber}/qrcode',
     queryParams,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getQrcode.key = \\"/UserWallet/{accountNumber}/qrcode\\";
 
 export const getRecent = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<ContactApiModel[]>> => {
+): Promise<VigoResponse<ContactApiModel[]>> => {
   
-  return Http.get(
-    getRecent.key,
+  return Http.get(ServiceLocation. + '/EpayRequest/audiences/recent',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getRecent.key = \\"/EpayRequest/audiences/recent\\";
 
 export const getReport = (
     queryParams: GetReportQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<ReportApiModel[]>> => {
+): Promise<VigoResponse<ReportApiModel[]>> => {
   
-  return Http.get(
-    getReport.key,
+  return Http.get(ServiceLocation. + '/EpayRequest/forMe/report',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getReport.key = \\"/EpayRequest/forMe/report\\";
 
 export const getSettlementRequestComission = (
     userWalletId: number,queryParams: GetSettlementRequestComissionQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (CommissionAmountApiModel)>> => {
+): Promise<VigoResponse< & (CommissionAmountApiModel)>> => {
   
-  return Http.get(
-    template(getSettlementRequestComission.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/UserWallet/{userWalletId}/settlementRequest/comission',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getSettlementRequestComission.key = \\"/UserWallet/{userWalletId}/settlementRequest/comission\\";
 
 
 /**
@@ -2206,7 +1561,7 @@ getSettlementRequestComission.key = \\"/UserWallet/{userWalletId}/settlementRequ
  */
 export const getTransactionsCount = (
     queryParams: GetTransactionsCountQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (AggregationApiModel)>> => {
+): Promise<VigoResponse< & (AggregationApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -2214,19 +1569,12 @@ export const getTransactionsCount = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getTransactionsCount.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/transactions/count',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getTransactionsCount.key = \\"/ResellerUser/dashboard/transactions/count\\";
 
 
 /**
@@ -2237,7 +1585,7 @@ getTransactionsCount.key = \\"/ResellerUser/dashboard/transactions/count\\";
  */
 export const getTransactionsReport = (
     queryParams: GetTransactionsReportQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<DateReportApiModelOfInteger[]>> => {
+): Promise<VigoResponse<DateReportApiModelOfInteger[]>> => {
   
   if (__DEV__) {
     console.warn(
@@ -2245,19 +1593,12 @@ export const getTransactionsReport = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    getTransactionsReport.key,
+  return Http.get(ServiceLocation. + '/ResellerUser/dashboard/transactions/report',
     queryParams,
     undefined,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getTransactionsReport.key = \\"/ResellerUser/dashboard/transactions/report\\";
 
 
 /**
@@ -2265,7 +1606,7 @@ getTransactionsReport.key = \\"/ResellerUser/dashboard/transactions/report\\";
  */
 export const getTransferMoneyCommission = (
     userWalletId: number,queryParams: GetTransferMoneyCommissionQueryParams,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (CommissionAmountApiModel)>> => {
+): Promise<VigoResponse< & (CommissionAmountApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -2273,42 +1614,23 @@ export const getTransferMoneyCommission = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.get(
-    template(getTransferMoneyCommission.key,{userWalletId,}),
+  return Http.get(ServiceLocation. + '/UserWallet/{userWalletId}/transferMoney/commission',
     queryParams,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-getTransferMoneyCommission.key = \\"/UserWallet/{userWalletId}/transferMoney/commission\\";
 
 export const post = (
-    requestBody: RegisterApiModel,headerParams: {\\"platformType\\": \\"Unknown\\" | \\"Server\\" | \\"Android\\" | \\"iOS\\" | \\"Device\\" | \\"Browser\\" | \\"PWA\\" | \\"Web\\" | \\"Windows\\" | \\"Linux\\" | \\"macOS\\" | \\"Desktop\\";},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (RegisterNewUserQuery)>> => {
+    requestBody: RegisterApiModel,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (RegisterNewUserQuery)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Auth/register',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT3,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Auth/register\\";
 
 
 /**
@@ -2317,21 +1639,14 @@ post.key = \\"/Auth/register\\";
  */
 export const post = (
     requestBody: UserForgetPasswordInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (ForgetPasswordQuery)>> => {
+): Promise<VigoResponse< & (ForgetPasswordQuery)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Auth/forgetPassword',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Auth/forgetPassword\\";
 
 
 /**
@@ -2341,21 +1656,14 @@ post.key = \\"/Auth/forgetPassword\\";
  */
 export const post = (
     requestBody: SendConnectionRequestInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (SubUserConnectionApiModel)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/BusinessUser/invite',
     undefined,
     requestBody,
-    _CONSTANT5,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/BusinessUser/invite\\";
 
 export const post = (
     
@@ -2364,21 +1672,14 @@ export const post = (
  * User Wallet id
  */
 userWalletId: number,requestBody: RequestBodyNewEpayRequestInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (EpayRequestDetailApiModel)>> => {
+): Promise<VigoResponse< & (EpayRequestDetailApiModel)>> => {
   
-  return Http.post(
-    template(post.key,{userWalletId,}),
+  return Http.post(ServiceLocation. + '/EpayRequest/{userWalletId}',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/EpayRequest/{userWalletId}\\";
 
 
 /**
@@ -2388,21 +1689,14 @@ post.key = \\"/EpayRequest/{userWalletId}\\";
  */
 export const post = (
     requestBody: RequestBodyFile_Upload,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (FileApiModel)>> => {
+): Promise<VigoResponse< & (FileApiModel)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/File',
     undefined,
     objToForm(requestBody),
-    _CONSTANT1,
-    overrideConfig(_CONSTANT7,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/File\\";
 
 
 /**
@@ -2411,21 +1705,14 @@ post.key = \\"/File\\";
  */
 export const post = (
     requestBody: RequestBodyFile_Upload,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<GroupTransferTargetValidationQuery[]>> => {
+): Promise<VigoResponse<GroupTransferTargetValidationQuery[]>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/GroupTransfer/import',
     undefined,
     objToForm(requestBody),
-    _CONSTANT1,
-    overrideConfig(_CONSTANT7,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/GroupTransfer/import\\";
 
 
 /**
@@ -2434,21 +1721,14 @@ post.key = \\"/GroupTransfer/import\\";
  */
 export const post = (
     requestBody: GroupTransferTargetValidationQuery[],configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/GroupTransfer/export',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/GroupTransfer/export\\";
 
 
 /**
@@ -2457,21 +1737,14 @@ post.key = \\"/GroupTransfer/export\\";
  */
 export const post = (
     requestBody: GroupTransferInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (GroupTransferQuery)>> => {
+): Promise<VigoResponse< & (GroupTransferQuery)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/GroupTransfer/transfer',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/GroupTransfer/transfer\\";
 
 
 /**
@@ -2480,39 +1753,25 @@ post.key = \\"/GroupTransfer/transfer\\";
  */
 export const post = (
     requestBody: ClientPurchaseInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (TaxiRecieptApiDto)>> => {
+): Promise<VigoResponse< & (TaxiRecieptApiDto)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Integration/TaxiPayment',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT9,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Integration/TaxiPayment\\";
 
 export const post = (
     requestBody: FullRegisterApiModel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (MachineSignUp)>> => {
+): Promise<VigoResponse< & (MachineSignUp)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Machine/RegisterUser',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Machine/RegisterUser\\";
 
 
 /**
@@ -2520,32 +1779,15 @@ post.key = \\"/Machine/RegisterUser\\";
  * Create an new [EpayRequest] with the given model.
  */
 export const post = (
-    requestBody: EpayRequestServiceInput,headerParams: {\\"apiKey\\": string;
-/**
- * 
- * - Format: guid
- */
-\\"clientId\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (EpayRequestWcfResult)>> => {
+    requestBody: EpayRequestServiceInput,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (EpayRequestWcfResult)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Service/NewEpayRequest',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT3,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Service/NewEpayRequest\\";
 
 
 /**
@@ -2553,27 +1795,15 @@ post.key = \\"/Service/NewEpayRequest\\";
  * Check the [EpayRequest] based on token
  */
 export const post = (
-    requestBody: string,headerParams: {\\"apiKey\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (EpayRequestCheckStatusResult)>> => {
+    requestBody: string,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (EpayRequestCheckStatusResult)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Service/CheckEpayRequest',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT3,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Service/CheckEpayRequest\\";
 
 
 /**
@@ -2581,27 +1811,15 @@ post.key = \\"/Service/CheckEpayRequest\\";
  * Verify the ApiKey for authorizing the [User]
  */
 export const post = (
-    headerParams: {\\"apiKey\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<boolean>> => {
+    configOverride?:AxiosRequestConfig
+): Promise<VigoResponse<boolean>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Service/VerifyApiKey',
     undefined,
     undefined,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT11,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Service/VerifyApiKey\\";
 
 
 /**
@@ -2609,32 +1827,15 @@ post.key = \\"/Service/VerifyApiKey\\";
  * Create a Divided [EpayRequest] for the given model.
  */
 export const post = (
-    requestBody: DivideEpayRequestServiceInput,headerParams: {\\"apiKey\\": string;
-/**
- * 
- * - Format: guid
- */
-\\"clientId\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (EpayRequestWcfResult)>> => {
+    requestBody: DivideEpayRequestServiceInput,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (EpayRequestWcfResult)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Service/NewDivideEpayRequest',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT3,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Service/NewDivideEpayRequest\\";
 
 
 /**
@@ -2642,27 +1843,15 @@ post.key = \\"/Service/NewDivideEpayRequest\\";
  * Unblock Amount of an Divided[EpayRequest]
  */
 export const post = (
-    requestBody: DividedEpayRequestUnblockInput,headerParams: {\\"apiKey\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (DividedEpayRequestUnblockResult)>> => {
+    requestBody: DividedEpayRequestUnblockInput,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (DividedEpayRequestUnblockResult)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Service/UnblockAmount',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT3,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Service/UnblockAmount\\";
 
 
 /**
@@ -2670,27 +1859,15 @@ post.key = \\"/Service/UnblockAmount\\";
  * Cancel Amount of an Divided[EpayRequest]
  */
 export const post = (
-    requestBody: DividedEpayRequestCancelInput,headerParams: {\\"apiKey\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (DividedEpayRequestCancelResult)>> => {
+    requestBody: DividedEpayRequestCancelInput,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (DividedEpayRequestCancelResult)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Service/CancelAmount',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT3,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Service/CancelAmount\\";
 
 
 /**
@@ -2698,55 +1875,26 @@ post.key = \\"/Service/CancelAmount\\";
  * Set [EPayRequest] status to 'Cancel' and cancel the payment
  */
 export const post = (
-    requestBody: string,headerParams: {\\"apiKey\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<boolean>> => {
+    requestBody: string,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse<boolean>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Service/CancelPayment',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT3,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Service/CancelPayment\\";
 
 export const post = (
-    headerParams: {
-/**
- * 
- * - Format: guid
- */
-\\"terminalId\\": string;\\"terminalVersion\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (InitApiModel)>> => {
+    configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (InitApiModel)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/Settings/init',
     undefined,
     undefined,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT11,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Settings/init\\";
 
 
 /**
@@ -2755,21 +1903,14 @@ post.key = \\"/Settings/init\\";
  */
 export const post = (
     userWalletId: number,requestBody: RequestBodyTransferMoneyInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (TransferMoneyApiModel)>> => {
+): Promise<VigoResponse< & (TransferMoneyApiModel)>> => {
   
-  return Http.post(
-    template(post.key,{userWalletId,}),
+  return Http.post(ServiceLocation. + '/Transfer/{userWalletId}',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/Transfer/{userWalletId}\\";
 
 
 /**
@@ -2780,21 +1921,14 @@ post.key = \\"/Transfer/{userWalletId}\\";
  */
 export const post = (
     requestBody: RequestBodyUserBankInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserBankApiModel)>> => {
+): Promise<VigoResponse< & (UserBankApiModel)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/UserBank',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/UserBank\\";
 
 
 /**
@@ -2803,21 +1937,14 @@ post.key = \\"/UserBank\\";
  */
 export const post = (
     requestBody: UserChangePasswordInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/User/changePassword',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/User/changePassword\\";
 
 
 /**
@@ -2826,21 +1953,14 @@ post.key = \\"/User/changePassword\\";
  */
 export const post = (
     requestBody: NewUserIdentityRequestInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserDetailQuery)>> => {
+): Promise<VigoResponse< & (UserDetailQuery)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/User/identityRequest',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/User/identityRequest\\";
 
 
 /**
@@ -2849,39 +1969,25 @@ post.key = \\"/User/identityRequest\\";
  */
 export const post = (
     requestBody: UpgradeToBusinessUserInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UpgradeToBusinessApiModel)>> => {
+): Promise<VigoResponse< & (UpgradeToBusinessApiModel)>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/User/upgradeToBusinessRequest',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/User/upgradeToBusinessRequest\\";
 
 export const post = (
     requestBody: RequestBodyAccountCreationApiModel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<number>> => {
+): Promise<VigoResponse<number>> => {
   
-  return Http.post(
-    post.key,
+  return Http.post(ServiceLocation. + '/UserWallet',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-post.key = \\"/UserWallet\\";
 
 
 /**
@@ -2890,21 +1996,14 @@ post.key = \\"/UserWallet\\";
  */
 export const postBasic = (
     requestBody: SetUserBasicInfoInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    postBasic.key,
+  return Http.post(ServiceLocation. + '/Auth/register/basic',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postBasic.key = \\"/Auth/register/basic\\";
 
 
 /**
@@ -2920,21 +2019,14 @@ export const postByconnectionIdPermission = (
  * Connection Id
  */
 connectionId: number,requestBody: SetAccountAccessForSubUserInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    template(postByconnectionIdPermission.key,{connectionId,}),
+  return Http.post(ServiceLocation. + '/BusinessUser/connection/{connectionId}/permission',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postByconnectionIdPermission.key = \\"/BusinessUser/connection/{connectionId}/permission\\";
 
 
 /**
@@ -2951,7 +2043,7 @@ export const postByinvitationId = (
  * Invitation Id
  */
 invitationId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (SubUserConnectionApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -2959,19 +2051,12 @@ invitationId: number,configOverride?:AxiosRequestConfig
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.post(
-    template(postByinvitationId.key,{invitationId,}),
+  return Http.post(ServiceLocation. + '/BusinessUser/resend/{invitationId}',
     undefined,
     undefined,
-    _CONSTANT5,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postByinvitationId.key = \\"/BusinessUser/resend/{invitationId}\\";
 
 
 /**
@@ -2986,21 +2071,14 @@ export const postByinvitationIdResend = (
  * Invitation Id
  */
 invitationId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (SubUserConnectionApiModel)>> => {
   
-  return Http.post(
-    template(postByinvitationIdResend.key,{invitationId,}),
+  return Http.post(ServiceLocation. + '/BusinessUser/invite/{invitationId}/resend',
     undefined,
     undefined,
-    _CONSTANT5,
-    overrideConfig(_CONSTANT0,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postByinvitationIdResend.key = \\"/BusinessUser/invite/{invitationId}/resend\\";
 
 
 /**
@@ -3017,7 +2095,7 @@ export const postByinvitationIdTask = (
  * invitation id
  */
 invitationId: number,requestBody: SubuserInvitationTaskInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
   if (__DEV__) {
     console.warn(
@@ -3025,19 +2103,12 @@ invitationId: number,requestBody: SubuserInvitationTaskInput,configOverride?:Axi
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.post(
-    template(postByinvitationIdTask.key,{invitationId,}),
+  return Http.post(ServiceLocation. + '/User/invitation/{invitationId}/task',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postByinvitationIdTask.key = \\"/User/invitation/{invitationId}/task\\";
 
 
 /**
@@ -3052,21 +2123,14 @@ export const postByinvitationTokenAccept = (
  * invitation token
  */
 invitationToken: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    template(postByinvitationTokenAccept.key,{invitationToken,}),
+  return Http.post(ServiceLocation. + '/User/invitation/{invitationToken}/accept',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postByinvitationTokenAccept.key = \\"/User/invitation/{invitationToken}/accept\\";
 
 
 /**
@@ -3081,21 +2145,14 @@ export const postByinvitationTokenReject = (
  * invitation token
  */
 invitationToken: string,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    template(postByinvitationTokenReject.key,{invitationToken,}),
+  return Http.post(ServiceLocation. + '/User/invitation/{invitationToken}/reject',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postByinvitationTokenReject.key = \\"/User/invitation/{invitationToken}/reject\\";
 
 
 /**
@@ -3108,32 +2165,15 @@ export const postBytargetAccountNumberOnline = (
  * 
  * Target account number
  */
-targetAccountNumber: string,requestBody: PosOnlinePayInput,headerParams: {
-/**
- * 
- * - Format: guid
- */
-\\"clientId\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (EpayRequestDetailApiModel)>> => {
+targetAccountNumber: string,requestBody: PosOnlinePayInput,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse< & (EpayRequestDetailApiModel)>> => {
   
-  return Http.post(
-    template(postBytargetAccountNumberOnline.key,{targetAccountNumber,}),
+  return Http.post(ServiceLocation. + '/Pos/pay/{targetAccountNumber}/online',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT3,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postBytargetAccountNumberOnline.key = \\"/Pos/pay/{targetAccountNumber}/online\\";
 
 
 /**
@@ -3147,21 +2187,14 @@ export const postBytargetAccountNumberWallet = (
  * Target account number
  */
 targetAccountNumber: string,requestBody: PosWalletPayInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (WalletReceiptApiModel)>> => {
+): Promise<VigoResponse< & (WalletReceiptApiModel)>> => {
   
-  return Http.post(
-    template(postBytargetAccountNumberWallet.key,{targetAccountNumber,}),
+  return Http.post(ServiceLocation. + '/Pos/pay/{targetAccountNumber}/wallet',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postBytargetAccountNumberWallet.key = \\"/Pos/pay/{targetAccountNumber}/wallet\\";
 
 
 /**
@@ -3174,7 +2207,7 @@ export const postByuserWalletId = (
  * UserWallet's Id
  */
 userWalletId: number,requestBody: RequestBodySubUserNotificationStatusInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
   if (__DEV__) {
     console.warn(
@@ -3182,19 +2215,12 @@ userWalletId: number,requestBody: RequestBodySubUserNotificationStatusInput,conf
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.post(
-    template(postByuserWalletId.key,{userWalletId,}),
+  return Http.post(ServiceLocation. + '/SubUser/notification/{userWalletId}',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postByuserWalletId.key = \\"/SubUser/notification/{userWalletId}\\";
 
 export const postByuserWalletIdNotification = (
     
@@ -3203,57 +2229,36 @@ export const postByuserWalletIdNotification = (
  * UserWallet's Id
  */
 userWalletId: number,requestBody: RequestBodySubUserNotificationStatusInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    template(postByuserWalletIdNotification.key,{userWalletId,}),
+  return Http.post(ServiceLocation. + '/SubUser/account/{userWalletId}/notification',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postByuserWalletIdNotification.key = \\"/SubUser/account/{userWalletId}/notification\\";
 
 export const postCancel = (
     epayId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    template(postCancel.key,{epayId,}),
+  return Http.post(ServiceLocation. + '/EpayRequest/{epayId}/cancel',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postCancel.key = \\"/EpayRequest/{epayId}/cancel\\";
 
 export const postCharge = (
     userWalletId: number,requestBody: NewChargeRequestInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (NewChargeRequestResultQuery)>> => {
+): Promise<VigoResponse< & (NewChargeRequestResultQuery)>> => {
   
-  return Http.post(
-    template(postCharge.key,{userWalletId,}),
+  return Http.post(ServiceLocation. + '/UserWallet/{userWalletId}/charge',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postCharge.key = \\"/UserWallet/{userWalletId}/charge\\";
 
 
 /**
@@ -3261,7 +2266,7 @@ postCharge.key = \\"/UserWallet/{userWalletId}/charge\\";
  */
 export const postEpayRequest = (
     userWalletId: number,requestBody: RequestBodyNewEpayRequestInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (EpayRequestDetailApiModel)>> => {
+): Promise<VigoResponse< & (EpayRequestDetailApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -3269,145 +2274,89 @@ export const postEpayRequest = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.post(
-    template(postEpayRequest.key,{userWalletId,}),
+  return Http.post(ServiceLocation. + '/UserWallet/{userWalletId}/epayRequest',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postEpayRequest.key = \\"/UserWallet/{userWalletId}/epayRequest\\";
 
 export const postLog = (
     configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    postLog.key,
+  return Http.post(ServiceLocation. + '/api/CspReport/Log',
     undefined,
     undefined,
-    undefined,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postLog.key = \\"/api/CspReport/Log\\";
 
 export const postOtpGenerate = (
     requestBody: RequestTotpInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (TotpLoginResult)>> => {
+): Promise<VigoResponse< & (TotpLoginResult)>> => {
   
-  return Http.post(
-    postOtpGenerate.key,
+  return Http.post(ServiceLocation. + '/Auth/login/otp/generate',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postOtpGenerate.key = \\"/Auth/login/otp/generate\\";
 
 export const postPayByuserWalletId = (
     epayToken: string,userWalletId: number,requestBody: EpayRequestPayInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (WalletReceiptApiModel)>> => {
+): Promise<VigoResponse< & (WalletReceiptApiModel)>> => {
   
-  return Http.post(
-    template(postPayByuserWalletId.key,{epayToken,userWalletId,}),
+  return Http.post(ServiceLocation. + '/EpayRequest/{epayToken}/pay/{userWalletId}',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postPayByuserWalletId.key = \\"/EpayRequest/{epayToken}/pay/{userWalletId}\\";
 
 export const postResend = (
     epayId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    template(postResend.key,{epayId,}),
+  return Http.post(ServiceLocation. + '/EpayRequest/{epayId}/resend',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postResend.key = \\"/EpayRequest/{epayId}/resend\\";
 
 export const postSwitch = (
     requestBody: RequestBodyLogEventLevel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SettingApiModel)>> => {
+): Promise<VigoResponse< & (SettingApiModel)>> => {
   
-  return Http.post(
-    postSwitch.key,
+  return Http.post(ServiceLocation. + '/Settings/log/switch',
     undefined,
     requestBody,
-    _CONSTANT12,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postSwitch.key = \\"/Settings/log/switch\\";
 
 export const postSwitchSeptapay = (
     requestBody: RequestBodyLogEventLevel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SettingApiModel)>> => {
+): Promise<VigoResponse< & (SettingApiModel)>> => {
   
-  return Http.post(
-    postSwitchSeptapay.key,
+  return Http.post(ServiceLocation. + '/Settings/log/switch/septapay',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postSwitchSeptapay.key = \\"/Settings/log/switch/septapay\\";
 
 export const postSwitchSerilog = (
     requestBody: RequestBodyLogEventLevel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SettingApiModel)>> => {
+): Promise<VigoResponse< & (SettingApiModel)>> => {
   
-  return Http.post(
-    postSwitchSerilog.key,
+  return Http.post(ServiceLocation. + '/Settings/log/switch/serilog',
     undefined,
     requestBody,
-    _CONSTANT12,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postSwitchSerilog.key = \\"/Settings/log/switch/serilog\\";
 
 
 /**
@@ -3418,7 +2367,7 @@ postSwitchSerilog.key = \\"/Settings/log/switch/serilog\\";
  */
 export const postTask = (
     epayId: number,requestBody: EpayRequestTaskInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
   if (__DEV__) {
     console.warn(
@@ -3426,19 +2375,12 @@ export const postTask = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.post(
-    template(postTask.key,{epayId,}),
+  return Http.post(ServiceLocation. + '/EpayRequest/{epayId}/task',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postTask.key = \\"/EpayRequest/{epayId}/task\\";
 
 
 /**
@@ -3446,7 +2388,7 @@ postTask.key = \\"/EpayRequest/{epayId}/task\\";
  */
 export const postTransferMoney = (
     userWalletId: number,requestBody: RequestBodyTransferMoneyInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (TransferMoneyApiModel)>> => {
+): Promise<VigoResponse< & (TransferMoneyApiModel)>> => {
   
   if (__DEV__) {
     console.warn(
@@ -3454,19 +2396,12 @@ export const postTransferMoney = (
       \\"This endpoint deprecated and will be remove. Please use an alternative\\",
     );
   }
-  return Http.post(
-    template(postTransferMoney.key,{userWalletId,}),
+  return Http.post(ServiceLocation. + '/UserWallet/{userWalletId}/transferMoney',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postTransferMoney.key = \\"/UserWallet/{userWalletId}/transferMoney\\";
 
 
 /**
@@ -3475,21 +2410,14 @@ postTransferMoney.key = \\"/UserWallet/{userWalletId}/transferMoney\\";
  */
 export const postVerify = (
     requestBody: VerifyPhoneNumberInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    postVerify.key,
+  return Http.post(ServiceLocation. + '/Auth/register/verify',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postVerify.key = \\"/Auth/register/verify\\";
 
 
 /**
@@ -3498,49 +2426,25 @@ postVerify.key = \\"/Auth/register/verify\\";
  */
 export const postVerify = (
     requestBody: UserVerifyForgetPasswordInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    postVerify.key,
+  return Http.post(ServiceLocation. + '/Auth/forgetPassword/verify',
     undefined,
     requestBody,
-    undefined,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postVerify.key = \\"/Auth/forgetPassword/verify\\";
 
 export const postVersion = (
-    requestBody: TerminalVersionApiModel,headerParams: {
-/**
- * 
- * - Format: guid
- */
-\\"clientId\\": string;},configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+    requestBody: TerminalVersionApiModel,configOverride?:AxiosRequestConfig
+): Promise<VigoResponse<string>> => {
   
-  return Http.post(
-    postVersion.key,
+  return Http.post(ServiceLocation. + '/Settings/terminal/version',
     undefined,
     requestBody,
-    _CONSTANT12,
-    overrideConfig({
-              headers:{
-                ..._CONSTANT13,
-                ...headerParams,
-              },
-            },
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-postVersion.key = \\"/Settings/terminal/version\\";
 
 
 /**
@@ -3549,21 +2453,14 @@ postVersion.key = \\"/Settings/terminal/version\\";
  */
 export const put = (
     requestBody: GroupTransferTargetValidationInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (GroupTransferTargetValidationQuery)>> => {
+): Promise<VigoResponse< & (GroupTransferTargetValidationQuery)>> => {
   
-  return Http.put(
-    put.key,
+  return Http.put(ServiceLocation. + '/GroupTransfer/add',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-put.key = \\"/GroupTransfer/add\\";
 
 
 /**
@@ -3573,21 +2470,14 @@ put.key = \\"/GroupTransfer/add\\";
  */
 export const put = (
     requestBody: SubDomainUpdateApiModel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubDomainApiModel)>> => {
+): Promise<VigoResponse< & (SubDomainApiModel)>> => {
   
-  return Http.put(
-    put.key,
+  return Http.put(ServiceLocation. + '/SubDomain',
     undefined,
     requestBody,
-    _CONSTANT10,
-    overrideConfig(_CONSTANT9,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-put.key = \\"/SubDomain\\";
 
 
 /**
@@ -3602,21 +2492,14 @@ export const put = (
  * User bank id
  */
 userBankId: number,requestBody: RequestBodyUserBankInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserBankApiModel)>> => {
+): Promise<VigoResponse< & (UserBankApiModel)>> => {
   
-  return Http.put(
-    template(put.key,{userBankId,}),
+  return Http.put(ServiceLocation. + '/UserBank/{userBankId}',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-put.key = \\"/UserBank/{userBankId}\\";
 
 
 /**
@@ -3627,21 +2510,14 @@ put.key = \\"/UserBank/{userBankId}\\";
  */
 export const put = (
     requestBody: UserProfileInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserDetailQuery)>> => {
+): Promise<VigoResponse< & (UserDetailQuery)>> => {
   
-  return Http.put(
-    put.key,
+  return Http.put(ServiceLocation. + '/User',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-put.key = \\"/User\\";
 
 
 /**
@@ -3651,39 +2527,25 @@ put.key = \\"/User\\";
  */
 export const put = (
     requestBody: UserProfileAvatarInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.put(
-    put.key,
+  return Http.put(ServiceLocation. + '/User/changeAvatar',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-put.key = \\"/User/changeAvatar\\";
 
 export const put = (
     userWalletId: number,requestBody: RequestBodyAccountCreationApiModel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (WalletDisplayApiModel)>> => {
+): Promise<VigoResponse< & (WalletDisplayApiModel)>> => {
   
-  return Http.put(
-    template(put.key,{userWalletId,}),
+  return Http.put(ServiceLocation. + '/UserWallet/{userWalletId}',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-put.key = \\"/UserWallet/{userWalletId}\\";
 
 
 /**
@@ -3699,21 +2561,14 @@ export const putByconnectionId = (
  * Connection Id
  */
 connectionId: number,requestBody: EditConnectionInfoInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (SubUserConnectionApiModel)>> => {
+): Promise<VigoResponse< & (SubUserConnectionApiModel)>> => {
   
-  return Http.put(
-    template(putByconnectionId.key,{connectionId,}),
+  return Http.put(ServiceLocation. + '/BusinessUser/connection/{connectionId}',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-putByconnectionId.key = \\"/BusinessUser/connection/{connectionId}\\";
 
 export const putByconnectionIdPermissionByuserWalletId = (
     connectionId: number,
@@ -3722,21 +2577,14 @@ export const putByconnectionIdPermissionByuserWalletId = (
  * Id of Account to edit it's permissios
  */
 userWalletId: number,requestBody: EditSubUserPermissionInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.put(
-    template(putByconnectionIdPermissionByuserWalletId.key,{connectionId,userWalletId,}),
+  return Http.put(ServiceLocation. + '/BusinessUser/connection/{connectionId}/permission/{userWalletId}',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-putByconnectionIdPermissionByuserWalletId.key = \\"/BusinessUser/connection/{connectionId}/permission/{userWalletId}\\";
 
 
 /**
@@ -3745,39 +2593,25 @@ putByconnectionIdPermissionByuserWalletId.key = \\"/BusinessUser/connection/{con
  */
 export const putBynotifIdDismiss = (
     notifId: number,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.put(
-    template(putBynotifIdDismiss.key,{notifId,}),
+  return Http.put(ServiceLocation. + '/Notification/ia/{notifId}/dismiss',
     undefined,
     undefined,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT6,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-putBynotifIdDismiss.key = \\"/Notification/ia/{notifId}/dismiss\\";
 
 export const putChangeStatus = (
     userPluginId: number,requestBody: UserPluginTogggleApiModel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse< & (UserPluginApiModel)>> => {
+): Promise<VigoResponse< & (UserPluginApiModel)>> => {
   
-  return Http.put(
-    template(putChangeStatus.key,{userPluginId,}),
+  return Http.put(ServiceLocation. + '/UserPlugin/{userPluginId}/ChangeStatus',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT2,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-putChangeStatus.key = \\"/UserPlugin/{userPluginId}/ChangeStatus\\";
 
 
 /**
@@ -3787,91 +2621,26 @@ putChangeStatus.key = \\"/UserPlugin/{userPluginId}/ChangeStatus\\";
  */
 export const putChangeVisibility = (
     userBankId: number,requestBody: UserBankChangeVisibilityInput,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.put(
-    template(putChangeVisibility.key,{userBankId,}),
+  return Http.put(ServiceLocation. + '/UserBank/{userBankId}/changeVisibility',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-putChangeVisibility.key = \\"/UserBank/{userBankId}/changeVisibility\\";
 
 export const putNotification = (
     userWalletId: number,requestBody: AccountSettingNotificationStatusApiModel,configOverride?:AxiosRequestConfig
-): Promise<SwaggerResponse<string>> => {
+): Promise<VigoResponse<string>> => {
   
-  return Http.put(
-    template(putNotification.key,{userWalletId,}),
+  return Http.put(ServiceLocation. + '/UserWallet/{userWalletId}/notification',
     undefined,
     requestBody,
-    _CONSTANT1,
-    overrideConfig(_CONSTANT4,
-      configOverride,
+    configOverride
     )
-  )
 }
-
-/** Key is end point string without base url */
-putNotification.key = \\"/UserWallet/{userWalletId}/notification\\";
-export const _CONSTANT0 = {
-              headers: {
-                \\"Content-Type\\": \\"application/json\\",
-                Accept: \\"application/json\\",
-              },
-            };export const _CONSTANT1 = [{\\"bearer\\":[]}];export const _CONSTANT10 = [{\\"bearer\\":[\\"Reseller\\"]}];export const _CONSTANT11 = {
-                  \\"Content-Type\\": \\"application/json\\",
-                  Accept: \\"application/json\\",
-
-                };export const _CONSTANT12 = [{\\"bearer\\":[\\"God\\"]}];export const _CONSTANT13 = {
-                  \\"Content-Type\\": \\"application/json-patch+json\\",
-                  Accept: \\"*/*\\",
-
-                };export const _CONSTANT14 = {
-                  \\"Content-Type\\": \\"application/json\\",
-                  Accept: \\"text/plain\\",
-
-                };export const _CONSTANT2 = {
-              headers: {
-                \\"Content-Type\\": \\"application/json-patch+json\\",
-                Accept: \\"application/json\\",
-              },
-            };export const _CONSTANT3 = {
-                  \\"Content-Type\\": \\"application/json-patch+json\\",
-                  Accept: \\"application/json\\",
-
-                };export const _CONSTANT4 = {
-              headers: {
-                \\"Content-Type\\": \\"application/json-patch+json\\",
-                Accept: \\"*/*\\",
-              },
-            };export const _CONSTANT5 = [{\\"bearer\\":[\\"Business\\"]}];export const _CONSTANT6 = {
-              headers: {
-                \\"Content-Type\\": \\"application/json\\",
-                Accept: \\"*/*\\",
-              },
-            };export const _CONSTANT7 = {
-              headers: {
-                \\"Content-Type\\": \\"multipart/form-data\\",
-                Accept: \\"application/json\\",
-              },
-            };export const _CONSTANT8 = {
-              headers: {
-                \\"Content-Type\\": \\"application/json\\",
-                Accept: \\"text/plain\\",
-              },
-            };export const _CONSTANT9 = {
-              headers: {
-                \\"Content-Type\\": \\"application/json-patch+json\\",
-                Accept: \\"text/plain\\",
-              },
-            };"
+"
 `;
 
 exports[`generate generate hooks 1`] = `
@@ -3890,7 +2659,7 @@ import {
   QueryClient,
   QueryKey,
 } from \\"react-query\\";
-import { RequestError, SwaggerResponse } from \\"./config\\";
+import { RequestError, VigoResponse } from \\"./config\\";
 
 import { AccountBalanceApiModel, AccountInfoApiModel, AccountPermittedSubUserQuery, AccountSettingNotificationStatusApiModel, AggregationApiModel, AllTransactionsReportApiModel, BankApiModel, BankReceiptApiModel, BusinessCategoryApiModel, BusinessUserConnectionApiModel, ClientPurchaseInput, CommissionAmountApiModel, ContactApiModel, DateReportApiModelOfDecimal, DateReportApiModelOfInteger, DeleteByinvitationIdRemoveQueryParams, DivideEpayRequestServiceInput, DividedEpayRequestCancelInput, DividedEpayRequestCancelResult, DividedEpayRequestUnblockInput, DividedEpayRequestUnblockResult, DriverInfoResult, EditConnectionInfoInput, EditSubUserPermissionInput, EpayRequestApiModel, EpayRequestCheckStatusResult, EpayRequestDetailApiModel, EpayRequestForUserQuery, EpayRequestPayInput, EpayRequestPublicInfoApiModel, EpayRequestServiceInput, EpayRequestTaskInput, EpayRequestWcfResult, FileApiModel, ForgetPasswordQuery, FullRegisterApiModel, GetActiveQueryParams, GetAllQueryParams, GetByconnectionIdEpayQueryParams, GetCommissionQueryParams, GetCommissionQueryParams, GetCommissionReportQueryParams, GetCommissionSumQueryParams, GetCountQueryParams, GetEpayRequestComissionQueryParams, GetIntroducedCountQueryParams, GetIntroducedReportQueryParams, GetLinksCountQueryParams, GetLinksPaidCountQueryParams, GetLinksPaidReportQueryParams, GetLinksReportQueryParams, GetQrByaccountNumberQueryParams, GetQrcodeQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetQueryParams, GetReportQueryParams, GetSettlementRequestComissionQueryParams, GetTransactionsCountQueryParams, GetTransactionsReportQueryParams, GetTransferMoneyCommissionQueryParams, GroupTransferInput, GroupTransferQuery, GroupTransferTargetValidationInput, GroupTransferTargetValidationQuery, ImportantActionApiModel, InitApiModel, KpiResult, MachineSignUp, NewChargeRequestInput, NewChargeRequestResultQuery, NewUserIdentityRequestInput, NotificationApiModel, PluginApiModel, PosLandingPageApiModel, PosOnlinePayInput, PosWalletPayInput, RegisterApiModel, RegisterNewUserQuery, ReportApiModel, RequestBodyAccountCreationApiModel, RequestBodyFile_Upload, RequestBodyLogEventLevel, RequestBodyNewEpayRequestInput, RequestBodySubUserNotificationStatusInput, RequestBodyTransferMoneyInput, RequestBodyUserBankInput, RequestTotpInput, ReselledUserActivityApiModel, ReselledUserApiModel, ReselledUserFilterData, ResellerApiModel, SendConnectionRequestInput, SetAccountAccessForSubUserInput, SetUserBasicInfoInput, SettingApiModel, SubDomainApiModel, SubDomainUpdateApiModel, SubUserAccountDetailQuery, SubUserActivityApiModel, SubUserConnectionApiModel, SubUserInvitationApiModel, SubUserPermissionApiModel, SubuserInvitationTaskInput, TaxiRecieptApiDto, TerminalVersionApiModel, TotpLoginResult, TransactionApiModel, TransferMoneyApiModel, UnreadNotificationCountApiModel, UpgradeToBusinessApiModel, UpgradeToBusinessUserInput, UserBankApiModel, UserBankChangeVisibilityInput, UserBankDetailApiModel, UserChangePasswordInput, UserDetailQuery, UserForgetPasswordInput, UserIdentityRequestQuery, UserMeQuery, UserMinimalDto, UserPluginApiModel, UserPluginDetailApiModel, UserPluginTogggleApiModel, UserProfileAvatarInput, UserProfileInput, UserVerifyForgetPasswordInput, UserWorkspaceQuery, VerifyPhoneNumberInput, WalletDetailApiModel, WalletDisplayApiModel, WalletReceiptApiModel,}  from \\"./types\\"
 import { deleteByconnectionId, deleteByconnectionId, deleteByconnectionId, deleteByconnectionIdPermissionByuserWalletId, deleteByinvitationIdRemove, deleteByinvitationIdRemove, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, get, getActive, getAll, getBalance, getBycode, getByconnectionId, getByconnectionIdActivity, getByconnectionIdEpay, getByconnectionIdPermission, getByepayToken, getByepayTryId, getByinput, getByinvitationToken, getBylogicalAction, getByuserIdActivity, getByuserWalletId, getCommission, getCommission, getCommissionReport, getCommissionSum, getCount, getCreators, getDetail, getEpayRequestComission, getFilterData, getIntroducedCount, getIntroducedReport, getLinksCount, getLinksPaidCount, getLinksPaidReport, getLinksReport, getPermittedsubusers, getQrByaccountNumber, getQrcode, getQrcode, getRecent, getReport, getSettlementRequestComission, getTransactionsCount, getTransactionsReport, getTransferMoneyCommission, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, post, postBasic, postByconnectionIdPermission, postByinvitationId, postByinvitationIdResend, postByinvitationIdTask, postByinvitationTokenAccept, postByinvitationTokenReject, postBytargetAccountNumberOnline, postBytargetAccountNumberWallet, postByuserWalletId, postByuserWalletIdNotification, postCancel, postCharge, postEpayRequest, postLog, postOtpGenerate, postPayByuserWalletId, postResend, postSwitch, postSwitchSeptapay, postSwitchSerilog, postTask, postTransferMoney, postVerify, postVerify, postVersion, put, put, put, put, put, put, putByconnectionId, putByconnectionIdPermissionByuserWalletId, putBynotifIdDismiss, putChangeStatus, putChangeVisibility, putNotification,}  from \\"./services\\"

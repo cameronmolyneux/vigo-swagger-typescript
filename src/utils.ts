@@ -45,8 +45,6 @@ function generateServiceName(
   operationId: string | undefined,
   config: Config
 ): string {
-  // eslint-disable-next-line no-debugger
-  debugger;
   const { methodName, methodParamsByTag, prefix = '' } = config;
 
   const _endPoint = endPoint.replace(new RegExp(`^${prefix}`, 'i'), '');
@@ -281,6 +279,8 @@ function isTypeAny(type: true | undefined | {} | Schema) {
 
 /** Used to replace {name} in string with obj.name */
 function template(str: string, obj: { [x: string]: string } = {}) {
+  // eslint-disable-next-line no-debugger
+  debugger;
   Object.entries(obj).forEach(([key, value]) => {
     const re = new RegExp(`{${key}}`, 'i');
     str = str.replace(re, value);
