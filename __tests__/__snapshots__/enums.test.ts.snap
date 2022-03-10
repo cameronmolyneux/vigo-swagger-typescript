@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`generate generate Code 1`] = `
-"/* eslint-disable prettier/prettier */
+"/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prettier/prettier */
 
 /**
 * AUTO_GENERATED Do not change this file directly, rerun the yarn vigo-swag-ts command*/
@@ -9,14 +10,14 @@ exports[`generate generate Code 1`] = `
 import { AxiosRequestConfig } from \\"axios\\";
 import { VigoResponse } from \\"../config\\";
 import { Http } from \\"../httpRequest\\";
-import { ServiceLocation } from '../../../utils/serviceLocationsAxios';
+import { ServiceLocation } from '../../utils/serviceLocationsAxios';
 import { GetPrivateSettlementGetQueryParams, SettlementRequestResultListResponseVM,}  from \\"../../../undefined/undefined\\"
 
-export const getPrivateSettlementGet = (
+export const getPrivateSettlementGet = async (
     queryParams: GetPrivateSettlementGetQueryParams,configOverride?:AxiosRequestConfig
 ): Promise<VigoResponse< & (SettlementRequestResultListResponseVM)>> => {
   
-  return Http.get(ServiceLocation.undefined + '/settlement/v1/private/settlement/get',
+  return await Http.get(ServiceLocation.undefined + '/settlement/v1/private/settlement/get',
     queryParams,
     undefined,
     configOverride

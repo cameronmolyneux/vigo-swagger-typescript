@@ -89,7 +89,7 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
     // write out the services
     if (serviceRootFolder !== undefined) {
       writeFileSync(`${serviceFolder}/index.ts`, code);
-      //formatFile(`${serviceFolder}/index.ts`, prettierOptions);
+      formatFile(`${serviceFolder}/index.ts`, prettierOptions);
       if (!existsSync(`${serviceRootFolder}/config.ts"`)) {
         writeFileSync(
           `${serviceRootFolder}/config.ts`,

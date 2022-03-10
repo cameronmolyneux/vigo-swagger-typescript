@@ -32,7 +32,7 @@ function generateApis(apis: ApiAST[], types: TypeAST[], config: Config): string 
 ${getJsdoc({
   description: summary,
   deprecated: deprecated ? DEPRECATED_WARM_MESSAGE : undefined
-})}export const ${serviceName} = (
+})}export const ${serviceName} = async (
     ${
       /** Path parameters */
       pathParams
@@ -59,7 +59,7 @@ ${getJsdoc({
   }`
       : ''
   }
-  return Http.${method}(ServiceLocation.${config.serviceName} + '${endPoint}',
+  return await Http.${method}(ServiceLocation.${config.serviceName} + '${endPoint.replace('id', " ' + id + '")}',
     ${queryParamsTypeName ? 'queryParams' : 'undefined'},
     ${
       requestBody
@@ -91,7 +91,7 @@ ${getJsdoc({
       service +
       '"\n';
 
-    code += apisCode;
+    code += apisCode.replace(new RegExp('apiversion: string,', 'g'), () => '');
     return code;
   } catch (error) {
     console.error(error);

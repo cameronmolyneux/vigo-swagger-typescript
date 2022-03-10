@@ -21,6 +21,7 @@ function cancellation<T>(
 ): Promise<T> {
   const source = axios.CancelToken.source();
   const promise = getPromise(source.token);
+   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   promise.cancel = () => {
     source.cancel("request canceled");

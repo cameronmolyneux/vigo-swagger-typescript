@@ -6,9 +6,9 @@ import Axios, {
   AxiosInstance,
 } from "axios";
 import qs from "qs";
-import { ServiceLocation } from '../../utils/serviceLocationsAxios';
-import { msalInstance } from '../../utils/createMSAL';
-import { tenantRequest } from '../../authConfig';
+import { ServiceLocation } from '../utils/serviceLocationsAxios';
+import { msalInstance } from '../utils/createMSAL';
+import { tenantRequest } from '../authConfig';
 import { v4 as uuidv4 } from 'uuid';
 
 const baseConfig: AxiosRequestConfig = {
