@@ -59,7 +59,9 @@ ${getJsdoc({
   }`
       : ''
   }
-  return await Http.${method}(ServiceLocation.${config.serviceName} + '${endPoint.replace('id', " ' + id + '")}',
+  return await Http.${method}(ServiceLocation.${config.serviceName} + '${endPoint
+              .replace('id', " ' + id + '")
+              .replace('/api/v1', '')}',
     ${queryParamsTypeName ? 'queryParams' : 'undefined'},
     ${
       requestBody
