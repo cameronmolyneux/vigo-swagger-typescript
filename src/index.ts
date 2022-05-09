@@ -27,8 +27,18 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
     local: cli?.local ?? config.local
   };
 
-  const { swaggerUrl, modelsFolder, serviceRootFolder, storeFolder, prettierPath, mock, local, serviceName } = config;
+  const {
+    swaggerUrl,
+    modelsFolder,
+    serviceRootFolder,
+    storeFolder,
+    prettierPath,
+    mock,
+    local,
+    modelsFilename
+  } = config;
 
+  let serviceName = config.serviceName;
   const serviceFolder = serviceRootFolder + '/' + serviceName;
 
   // if we are building models, create folder
@@ -77,6 +87,10 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
 
     if (mock) {
       generateMock(input, config);
+    }
+
+    if (serviceName == undefined) {
+      serviceName = modelsFilename;
     }
 
     // write out the models

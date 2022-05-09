@@ -244,6 +244,7 @@ export interface Config {
   serviceName?: string;
   serviceRootFolder: string;
   modelsFolder?: string;
+  modelsFilename?: string;
   storeFolder?: string;
   /** Default is false */
   keepJson?: boolean;
