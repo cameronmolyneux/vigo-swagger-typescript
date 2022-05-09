@@ -6,13 +6,18 @@ import Axios, {
   AxiosInstance,
 } from "axios";
 import qs from "qs";
-import { ServiceLocation } from '../utils/serviceLocationsAxios';
-import { msalInstance } from '../utils/createMSAL';
-import { tenantRequest } from '../authConfig';
+import { ServiceLocation } from '../services/serviceLocationsAxios';
+import { msalInstance } from '../authentication/createMSAL';
+import { tenantRequest } from '../authentication/authConfig';
 import { v4 as uuidv4 } from 'uuid';
 
+//import for runtime config
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
+
 const baseConfig: AxiosRequestConfig = {
-  baseURL: ServiceLocation.${AUTO_REPLACE_SERVICE_LOCATION},
+   baseURL: publicRuntimeConfig.BaseAPIUri,
   paramsSerializer: params => qs.stringify(params, { arrayFormat: 'repeat' }),
     headers: {
       'Content-Type': 'application/json'
@@ -39,6 +44,7 @@ function getAxiosInstance(): AxiosInstance {
          *   };
          *   return VigoResponse;
          */
+
         return response;
       }) as any,
       (error: AxiosError) => {
@@ -62,6 +68,7 @@ function getAxiosInstance(): AxiosInstance {
             ),
           );
         }
+
         return Promise.reject(error);
       },
     );
@@ -76,9 +83,10 @@ function getAxiosInstance(): AxiosInstance {
         Authorization: `Bearer ${accessToken.accessToken}`,
         Accept: 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
-        'x-tenantId': localStorage.getItem('currentTenantId'),
+        'x-tenantId': JSON.parse(localStorage.getItem('currentTenantId') || ""),
         'x-requestId': requestId
       };
+      
       return config;
     },
     error => {

@@ -41,7 +41,7 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
     mkdirSync(serviceRootFolder);
   }
   // and build the actual service folder if it does not exsit
-  if (serviceFolder !== undefined && !existsSync(serviceFolder)) {
+  if (serviceFolder !== undefined && !existsSync(serviceFolder) && serviceFolder != 'undefined/undefined') {
     mkdirSync(serviceFolder);
   }
 
@@ -95,6 +95,7 @@ const generateService = async (config: Config, cli?: Partial<Config>) => {
           `${serviceRootFolder}/config.ts`,
           CONFIG.replace('${AUTO_REPLACE_SERVICE_LOCATION}', serviceName || '')
         );
+
         formatFile(`${serviceRootFolder}/config.ts`, prettierOptions);
         writeFileSync(`${serviceRootFolder}/httpRequest.ts`, HTTP_REQUEST);
         formatFile(`${serviceRootFolder}/httpRequest.ts`, prettierOptions);

@@ -1,6 +1,6 @@
 {
   "name": "vigo-swagger-typescript",
-  "version": "1.0.15",
+  "version": "1.0.19",
   "description": "An auto ts code generate from swagger/openApi",
   "main": "lib/index.js",
   "bin": {
@@ -58,9 +58,7 @@
     "prettier": ">=2.2"
   },
   "husky": {
-    "hooks": {
-
-    }
+    "hooks": {}
   },
   "jest": {
     "preset": "ts-jest"

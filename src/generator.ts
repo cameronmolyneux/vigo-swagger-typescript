@@ -53,7 +53,10 @@ function generator(input: SwaggerJson, config: Config): { code: string; hooks: s
         if (method === 'parameters') {
           return;
         }
-
+        if (method === 'options') {
+          return;
+        }
+        console.log(method);
         endPoint = endPoint.replace('v{apiversion}', version);
 
         const { operationId, security } = options;

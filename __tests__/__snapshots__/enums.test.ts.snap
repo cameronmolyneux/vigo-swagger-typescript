@@ -2,7 +2,6 @@
 
 exports[`generate generate Code 1`] = `
 "/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable prettier/prettier */
 
 /**
 * AUTO_GENERATED Do not change this file directly, rerun the yarn vigo-swag-ts command*/
@@ -10,7 +9,7 @@ exports[`generate generate Code 1`] = `
 import { AxiosRequestConfig } from \\"axios\\";
 import { VigoResponse } from \\"../config\\";
 import { Http } from \\"../httpRequest\\";
-import { ServiceLocation } from '../../utils/serviceLocationsAxios';
+import { ServiceLocation } from '../serviceLocationsAxios';
 import { GetPrivateSettlementGetQueryParams, SettlementRequestResultListResponseVM,}  from \\"../../../undefined/undefined\\"
 
 export const getPrivateSettlementGet = async (

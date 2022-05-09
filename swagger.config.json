@@ -1,9 +1,6 @@
 [
   {
     "swaggerUrl": "https://dev.api2.vigocloud.com/masterdata/swagger/v1/swagger.json",
-    "serviceRootFolder": "test/service",
-    "modelsFolder": "test/models",
-    "serviceName": "masterdata"
-    }
+    "modelsFolder": "src/models"
+  }
 ]
-
