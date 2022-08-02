@@ -105,7 +105,9 @@ function getParamString(
   description?: string,
   isPartial?: boolean
 ): string {
-  return `${getJsdoc({
+  return `
+  
+  ${getJsdoc({
     description
   })}${name}${required ? '' : '?'}: ${isPartial ? `Partial<${type}>` : type}`;
 }
@@ -186,11 +188,8 @@ function getObjectType(parameter: { schema?: Schema; name: string }[]) {
         prev,
         { schema: { deprecated, 'x-deprecatedMessage': deprecatedMessage, example, nullable } = {}, schema, name }
       ) => {
-        return `${prev}${getJsdoc({
-          ...schema,
-          deprecated: deprecated || deprecatedMessage ? deprecatedMessage : undefined,
-          example
-        })}"${name}"${nullable ? '?' : ''}: ${getTsType(schema)};`;
+        return `${prev}
+        "${name}"${nullable ? '?' : ''}: ${getTsType(schema)};`;
       },
       ''
     );

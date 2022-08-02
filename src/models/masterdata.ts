@@ -8,15 +8,22 @@ export interface BooleanApiResponse {
 }
 
 export interface CurrencyDto {
-  /** - Format: int32 */
   attachmentCount?: number;
   code?: string;
+  createdBy?: string;
+  createdOn?: string;
+  deletedBy?: string;
+  deletedOn?: string;
   description?: string;
-  /** - Format: uuid */
+  displayOrder?: number;
   id?: string;
+  isDefault?: number;
   isDeleted?: boolean;
-  /** - Format: uuid */
+  partnerId?: string;
+  remarks?: string;
   siteId?: string;
+  updatedBy?: string;
+  updatedOn?: string;
   version?: string;
 }
 
@@ -28,119 +35,145 @@ export interface CurrencyDtoApiResponse {
 }
 
 export interface CurrencyModel {
-  /** - MaxLength: 200 */
   code?: string;
-  /** - MaxLength: 400 */
   description?: string;
+  displayOrder?: number;
+  isDefault?: number;
+  remarks?: string;
   version?: string;
 }
 
 export interface GetCurrencyByidQueryParams {
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
 }
 
 export interface GetCurrencyQueryParams {
   filter?: string;
-  /** - Format: int32 */
   pageNumber?: number;
-  /** - Format: int32 */
   pageSize?: number;
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
   sort?: string;
 }
 
 export interface GetMasterDataByidQueryParams {
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
 }
 
 export interface GetMasterDataChildByidQueryParams {
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
 }
 
 export interface GetMasterDataChildQueryParams {
   filter?: string;
-  /** - Format: int32 */
   pageNumber?: number;
-  /** - Format: int32 */
   pageSize?: number;
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
   sort?: string;
 }
 
 export interface GetMasterDataColumnByidQueryParams {
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
 }
 
 export interface GetMasterDataColumnQueryParams {
   filter?: string;
-  /** - Format: int32 */
   pageNumber?: number;
-  /** - Format: int32 */
   pageSize?: number;
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
+  sort?: string;
+}
+
+export interface GetMasterDataGroupByidQueryParams {
+  showAllSites?: boolean;
+  showDeleted?: boolean;
+}
+
+export interface GetMasterDataGroupQueryParams {
+  filter?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  showAllSites?: boolean;
+  showDeleted?: boolean;
   sort?: string;
 }
 
 export interface GetMasterDataQueryParams {
   filter?: string;
-  /** - Format: int32 */
   pageNumber?: number;
-  /** - Format: int32 */
   pageSize?: number;
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
+  sort?: string;
+}
+
+export interface GetNominalByidQueryParams {
+  showAllSites?: boolean;
+  showDeleted?: boolean;
+}
+
+export interface GetNominalQueryParams {
+  filter?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  showAllSites?: boolean;
+  showDeleted?: boolean;
   sort?: string;
 }
 
 export interface GetUnitOfMeasureByidQueryParams {
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
 }
 
 export interface GetUnitOfMeasureQueryParams {
   filter?: string;
-  /** - Format: int32 */
   pageNumber?: number;
-  /** - Format: int32 */
   pageSize?: number;
   showAllSites?: boolean;
   showDeleted?: boolean;
-  showMaster?: boolean;
+  sort?: string;
+}
+
+export interface GetUnitOfMeasureTypeByidQueryParams {
+  showAllSites?: boolean;
+  showDeleted?: boolean;
+}
+
+export interface GetUnitOfMeasureTypeQueryParams {
+  filter?: string;
+  pageNumber?: number;
+  pageSize?: number;
+  showAllSites?: boolean;
+  showDeleted?: boolean;
   sort?: string;
 }
 
 export interface MasterDataChildDto {
-  /** - Format: int32 */
   attachmentCount?: number;
-  /** - Format: uuid */
+  createdBy?: string;
+  createdOn?: string;
+  deletedBy?: string;
+  deletedOn?: string;
   id?: string;
   isDeleted?: boolean;
   joinColumn?: string;
-  /** - Format: uuid */
+  joinName?: string;
   masterDataChildId?: string;
-  /** - Format: uuid */
   masterDataId?: string;
   name?: string;
-  /** - Format: int32 */
+  partnerId?: string;
+  remarks?: string;
   sequence?: number;
-  /** - Format: uuid */
   siteId?: string;
+  updatedBy?: string;
+  updatedOn?: string;
   version?: string;
 }
 
@@ -152,50 +185,44 @@ export interface MasterDataChildDtoApiResponse {
 }
 
 export interface MasterDataChildModel {
-  /** - MaxLength: 200 */
   joinColumn: string;
-  /** - MaxLength: 200 */
   name: string;
-  /** - Format: uuid */
+  joinName?: string;
   masterDataChildId?: string;
-  /** - Format: uuid */
   masterDataId?: string;
-  /** - Format: int32 */
+  remarks?: string;
   sequence?: number;
   version?: string;
 }
 
 export interface MasterDataColumnDto {
-  /** - Format: int32 */
   attachmentCount?: number;
   columnName?: string;
   columnType?: string;
-  /** - Format: uuid */
+  createdBy?: string;
+  createdOn?: string;
+  deletedBy?: string;
+  deletedOn?: string;
   id?: string;
-  isDefaultVisible?: boolean;
   isDeleted?: boolean;
   isEditable?: boolean;
-  isLockedOnceUsed?: boolean;
+  isRequired?: boolean;
   isUnique?: boolean;
-  isUsedInFilter?: boolean;
   isVisible?: boolean;
   lookUp?: string;
   lookUpColumns?: string;
-  /** - Format: uuid */
   masterDataId?: string;
-  /** - Format: int32 */
   maxLen?: number;
-  /** - Format: int32 */
   maxValue?: number;
-  /** - Format: int32 */
   minLen?: number;
-  /** - Format: int32 */
   minValue?: number;
   name?: string;
-  /** - Format: int32 */
+  partnerId?: string;
+  remarks?: string;
   sequence?: number;
-  /** - Format: uuid */
   siteId?: string;
+  updatedBy?: string;
+  updatedOn?: string;
   version?: string;
 }
 
@@ -207,58 +234,49 @@ export interface MasterDataColumnDtoApiResponse {
 }
 
 export interface MasterDataColumnModel {
-  /** - MaxLength: 200 */
   columnName?: string;
-  /** - MaxLength: 200 */
   columnType?: string;
-  isDefaultVisible?: boolean;
   isEditable?: boolean;
-  isLockedOnceUsed?: boolean;
+  isRequired?: boolean;
   isUnique?: boolean;
-  isUsedInFilter?: boolean;
   isVisible?: boolean;
-  /** - MaxLength: 200 */
   lookUp?: string;
-  /** - MaxLength: 400 */
   lookUpColumns?: string;
-  /** - Format: uuid */
   masterDataId?: string;
-  /** - Format: int32 */
   maxLen?: number;
-  /** - Format: int32 */
   maxValue?: number;
-  /** - Format: int32 */
   minLen?: number;
-  /** - Format: int32 */
   minValue?: number;
-  /** - MaxLength: 200 */
   name?: string;
-  /** - Format: int32 */
+  remarks?: string;
   sequence?: number;
   version?: string;
 }
 
 export interface MasterDataDto {
-  /** - Format: int32 */
   attachmentCount?: number;
   code?: string;
+  createdBy?: string;
+  createdOn?: string;
+  deletedBy?: string;
+  deletedOn?: string;
   description?: string;
-  groupName?: string;
-  /** - Format: uuid */
+  endPoint?: string;
   id?: string;
-  isDefaultVisible?: boolean;
   isDeleted?: boolean;
   isEditable?: boolean;
-  isLockedOnceUsed?: boolean;
   isVisible?: boolean;
-  /** - Format: uuid */
+  masterDataGroupId?: string;
   masterDataId?: string;
-  /** - Format: int32 */
+  partnerId?: string;
+  remarks?: string;
   sequence?: number;
-  /** - Format: uuid */
+  serviceLocation?: string;
   siteId?: string;
   subGroupName?: string;
   tableName?: string;
+  updatedBy?: string;
+  updatedOn?: string;
   version?: string;
 }
 
@@ -269,48 +287,116 @@ export interface MasterDataDtoApiResponse {
   succeeded?: boolean;
 }
 
-export interface MasterDataModel {
-  /** - MaxLength: 200 */
+export interface MasterDataGroupDto {
+  attachmentCount?: number;
   code?: string;
-  /** - MaxLength: 400 */
+  createdBy?: string;
+  createdOn?: string;
+  deletedBy?: string;
+  deletedOn?: string;
   description?: string;
-  /** - MaxLength: 200 */
-  groupName?: string;
-  isDefaultVisible?: boolean;
-  isEditable?: boolean;
-  isLockedOnceUsed?: boolean;
-  isVisible?: boolean;
-  /** - Format: uuid */
-  masterDataId?: string;
-  /** - Format: int32 */
+  id?: string;
+  isDeleted?: boolean;
+  partnerId?: string;
+  remarks?: string;
   sequence?: number;
-  /** - MaxLength: 200 */
+  siteId?: string;
+  updatedBy?: string;
+  updatedOn?: string;
+  version?: string;
+}
+
+export interface MasterDataGroupDtoApiResponse {
+  additionalInfo?: string[];
+  data?: MasterDataGroupDto;
+  message?: string;
+  succeeded?: boolean;
+}
+
+export interface MasterDataGroupModel {
+  code?: string;
+  description?: string;
+  remarks?: string;
+  sequence?: number;
+  version?: string;
+}
+
+export interface MasterDataModel {
+  code?: string;
+  description?: string;
+  endPoint?: string;
+  isEditable?: boolean;
+  isVisible?: boolean;
+  masterDataGroupId?: string;
+  masterDataId?: string;
+  remarks?: string;
+  sequence?: number;
+  serviceLocation?: string;
   subGroupName?: string;
-  /** - MaxLength: 200 */
   tableName?: string;
+  version?: string;
+}
+
+export interface NominalDto {
+  attachmentCount?: number;
+  code?: string;
+  createdBy?: string;
+  createdOn?: string;
+  deletedBy?: string;
+  deletedOn?: string;
+  description?: string;
+  displayOrder?: number;
+  id?: string;
+  isDeleted?: boolean;
+  partnerId?: string;
+  remarks?: string;
+  siteId?: string;
+  updatedBy?: string;
+  updatedOn?: string;
+  version?: string;
+}
+
+export interface NominalDtoApiResponse {
+  additionalInfo?: string[];
+  data?: NominalDto;
+  message?: string;
+  succeeded?: boolean;
+}
+
+export interface NominalModel {
+  code?: string;
+  description?: string;
+  displayOrder?: number;
+  remarks?: string;
   version?: string;
 }
 
 export interface ProblemDetails {
   detail?: string;
   instance?: string;
-  /** - Format: int32 */
   status?: number;
   title?: string;
   type?: string;
 }
 
 export interface UnitOfMeasureDto {
-  /** - Format: int32 */
   attachmentCount?: number;
-  class?: string;
   code?: string;
+  createdBy?: string;
+  createdOn?: string;
+  deletedBy?: string;
+  deletedOn?: string;
   description?: string;
-  /** - Format: uuid */
+  displayOrder?: number;
   id?: string;
+  isDefault?: boolean;
   isDeleted?: boolean;
-  /** - Format: uuid */
+  partnerId?: string;
+  remarks?: string;
   siteId?: string;
+  unitOfMeasureTypeId?: string;
+  updatedBy?: string;
+  updatedOn?: string;
   version?: string;
 }
 
@@ -322,11 +408,47 @@ export interface UnitOfMeasureDtoApiResponse {
 }
 
 export interface UnitOfMeasureModel {
-  /** - MaxLength: 200 */
-  class?: string;
-  /** - MaxLength: 200 */
   code?: string;
-  /** - MaxLength: 400 */
   description?: string;
+  displayOrder?: number;
+  isDefault?: boolean;
+  remarks?: string;
+  unitOfMeasureTypeId?: string;
+  version?: string;
+}
+
+export interface UnitOfMeasureTypeDto {
+  attachmentCount?: number;
+  code?: string;
+  createdBy?: string;
+  createdOn?: string;
+  deletedBy?: string;
+  deletedOn?: string;
+  description?: string;
+  displayOrder?: number;
+  id?: string;
+  isDefault?: boolean;
+  isDeleted?: boolean;
+  partnerId?: string;
+  remarks?: string;
+  siteId?: string;
+  updatedBy?: string;
+  updatedOn?: string;
+  version?: string;
+}
+
+export interface UnitOfMeasureTypeDtoApiResponse {
+  additionalInfo?: string[];
+  data?: UnitOfMeasureTypeDto;
+  message?: string;
+  succeeded?: boolean;
+}
+
+export interface UnitOfMeasureTypeModel {
+  code?: string;
+  description?: string;
+  displayOrder?: number;
+  isDefault?: boolean;
+  remarks?: string;
   version?: string;
 }
